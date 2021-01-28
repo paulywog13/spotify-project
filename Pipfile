@@ -5,11 +5,10 @@ name = "pypi"
 
 [packages]
 flask = "*"
-pymongo = "*"
 libsass = "*"
 pandas = "*"
 numpy = "*"
-flask-pymongo = "*"
+pymongo = "*"
 
 [dev-packages]
 
