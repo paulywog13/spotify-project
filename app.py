@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, json
 from sassutils.wsgi import SassMiddleware
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -15,6 +16,9 @@ def home():
 
 @app.route("/data")
 def get_data():
+    df = pd.csv('spotify.csv')
+    df_json = df.to_json(orient="index")
+    res =
     return 'this is where I give you the data'
 
 
