@@ -9,6 +9,7 @@ pymongo = "*"
 libsass = "*"
 pandas = "*"
 numpy = "*"
+flask-pymongo = "*"
 
 [dev-packages]
 
