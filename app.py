@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, json
 from sassutils.wsgi import SassMiddleware
 from pymongo import MongoClient
-from bson.json_util import loads, dumps
+from bson.json_util import dumps
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
