@@ -10,12 +10,12 @@
 
 <body>
     <div id="app" class="container-fluid">
-        <div class="jumbotron text-center">
-            <h1>Spotify Playlist Project</h1>
-            <p></p>
-            <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>
-        </div>
-        <hr>
+<!--        <div class="jumbotron text-center">-->
+<!--            <h1>Spotify Playlist Project</h1>-->
+<!--            <p></p>-->
+<!--            <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>-->
+<!--        </div>-->
+<!--        <hr>-->
         <section class="section">
             <h1 class="title">Playlist Results</h1>
             <div v-if="loading" class="container">
@@ -24,8 +24,32 @@
             <div v-else-if="error" class="container">
                 <error-message />
             </div>
-            <div v-else class="container-fluid m-0">
-                <scatter :tracks="tracks" :selected="selected"/>
+            <div v-else class="container-fluid">
+                <scatter :tracks="tracks" :x="x" :y="y"/>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <label for="xAxisSelect" class="label">X Axis</label>
+                    <div class="select is-primary">
+                        <select id="xAxisSelect" v-model="x">
+                            <option v-for="axis in axes"
+                                    :key="'x-' + axis"
+                                    :value="axis"
+                                    :disabled="axis == y">{( toTitleCase(axis) )}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <label for="yAxisSelect" class="label">Y Axis</label>
+                    <div class="select is-primary">
+                        <select id="yAxisSelect" v-model="y">
+                            <option v-for="axis in axes"
+                                    :key="'y-' + axis"
+                                    :value="axis"
+                                    :disabled="axis == x">{( toTitleCase(axis) )}</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -39,6 +63,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+    <script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 
