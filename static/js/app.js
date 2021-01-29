@@ -1,16 +1,11 @@
 var Scatter = Vue.component('scatter', {
     props: {
         tracks: Array,
+        selected: Object,
     },
     template: `<svg :width="params.tWidth" :height="params.tHeight">
                     <g id="chartGroup" :transform="'translate(' + params.mLeft + ', ' + params.mTop + ')'"></g>
                 </svg>`,
-    data: function() {
-        return {
-            x: 'tempo',
-            y: 'danceability'
-        }
-    },
     computed: {
         params: function() {
             return {
@@ -25,8 +20,49 @@ var Scatter = Vue.component('scatter', {
             }
         },
     },
+    methods: {
+        linearScale: function(axis, data) {
+            const offset = axis === 'x' ? 0.05 : 0.2;
+            return d3.scaleLinear()
+                .domain([d3.min(data, d => d[this.selected[axis]]) * (1 - offset),
+                    d3.max(data, d => d[this.selected[axis]]) * (1 + offset)])
+                .range(axis === 'x' ? [0, this.params.iWidth] : [this.params.iHeight, 0]);
+        },
+        renderAxis: function(axis, axisObj, scale) {
+            return axisObj.transition()
+                .duration(500)
+                .call(axis === 'x' ? d3.axisBottom(scale) : d3.axisLeft(scale));
+        },
+        renderCircles: function(circlesGroup, scale, axis) {
+            circlesGroup.selectAll('circle')
+                .transition()
+                .duration(500)
+                .attr(`c${axis}`, d => scale(d[this.selected[axis]]));
+            circlesGroup.selectAll('text')
+                .transition()
+                .duration(500)
+                .attr(axis, d => scale(d[this.selected[axis]]));
+        },
+    },
     mounted: function() {
-        console.log(this.tracks);
+        const chartGroup = d3.select('#chartGroup');
+        let xScale = this.linearScale('x', this.tracks);
+        let xAxis = chartGroup.append('g')
+            .classed('x-axis', true)
+            .attr('transform', `translate(0, ${this.params.iHeight})`)
+            .call(d3.axisBottom(xScale));
+        let yScale = this.linearScale('y', this.tracks);
+        let yAxis = chartGroup.append('g')
+            .classed('y-axis', true)
+            .call(d3.axisLeft(yScale));
+
+        const circlesGroup = chartGroup.selectAll('circle')
+            .data(this.tracks)
+            .enter()
+            .append('circle')
+            .attr('cx', d => xScale(d[this.selected.x]))
+            .attr('cy', d => yScale(d[this.selected.y]))
+            .attr('r', 10);
     }
 })
 
@@ -51,6 +87,10 @@ var app = new Vue({
         'error-message': ErrorMsg,
     },
     data: {
+        selected: {
+          x: 'tempo',
+          y: 'danceability',
+        },
         tracks: [],
         loading: true,
         error: null,
