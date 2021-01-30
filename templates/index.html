@@ -9,26 +9,49 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="jumbotron text-center">
-        <h1>Spotify Playlist Project</h1>
-        <p></p>
-        <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>
-    </div>
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 text-center col-md-12">
-                <h1>Playlist Results</h1>
+    <div id="app" class="container-fluid">
+<!--        <div class="jumbotron text-center">-->
+<!--            <h1>Spotify Playlist Project</h1>-->
+<!--            <p></p>-->
+<!--            <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>-->
+<!--        </div>-->
+<!--        <hr>-->
+        <section class="section">
+            <h1 class="title">Playlist Results</h1>
+            <div v-if="loading" class="container">
+                <spinner/>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12  col-md-9">
-                <div id="scatter">
-                    <!-- We append our chart here. -->
+            <div v-else-if="error" class="container">
+                <error-message />
+            </div>
+            <div v-else class="container-fluid">
+                <scatter :tracks="tracks" :x="x" :y="y"/>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <label for="xAxisSelect" class="label">X Axis</label>
+                    <div class="select is-primary">
+                        <select id="xAxisSelect" v-model="x">
+                            <option v-for="axis in axes"
+                                    :key="'x-' + axis"
+                                    :value="axis"
+                                    :disabled="axis == y">{( toTitleCase(axis) )}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <label for="yAxisSelect" class="label">Y Axis</label>
+                    <div class="select is-primary">
+                        <select id="yAxisSelect" v-model="y">
+                            <option v-for="axis in axes"
+                                    :key="'y-' + axis"
+                                    :value="axis"
+                                    :disabled="axis == x">{( toTitleCase(axis) )}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -38,7 +61,9 @@
             crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+    <script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 

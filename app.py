@@ -5,7 +5,6 @@ from bson.json_util import dumps
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.config["MONGO_URI"] = "mongodb://localhost:27017/spotify_db"
 mdb_connect_string = "mongodb://localhost:27017"
 
 app.wsgi_app = SassMiddleware(app.wsgi_app, {
