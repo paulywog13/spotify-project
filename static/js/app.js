@@ -27,6 +27,7 @@ const app = new Vue({
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
+                console.log(data);
             })
             .catch(err => {
                 this.error = err;
