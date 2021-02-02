@@ -9,6 +9,8 @@ libsass = "*"
 pandas = "*"
 numpy = "*"
 pymongo = "*"
+matplotlib = "*"
+spotipy = "*"
 
 [dev-packages]
 

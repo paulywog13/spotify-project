@@ -5,6 +5,7 @@ const Scatter = Vue.component('scatter', {
         tracks: Array,
         x: String,
         y: String,
+        users: Object,
     },
     template: `<svg :width="params.tWidth" :height="params.tHeight" class="has-background-dark has-text-white">
                     <g class="chart-group" :transform="'translate(' + params.mLeft + ', ' + params.mTop + ')'">
@@ -64,9 +65,11 @@ const Scatter = Vue.component('scatter', {
             const toolTip = d3.tip()
                 .offset([80, -60])
                 .html((d) => {
-                    return `<div class="box has-text-light has-background-info-dark has-text-centered">
-                                <h5>${d.artist}</h5>
-                                <h6>${d.name}</h6>
+                    // let style = `{background-color: ${this.users[d.user_id]};}`
+                    return `<div class="box has-text-light has-background-danger-dark has-text-centered" >
+                                <h5>Artist: ${d.artist}</h5>
+                                <h6>Track: ${d.name}</h6>
+                                <p>Added by ${d.user_id}</p>
                             </div>`
                 });
             circlesGroup
@@ -117,7 +120,7 @@ const Scatter = Vue.component('scatter', {
             .append('circle')
             .attr('cx', d => xScale(d[this.x]))
             .attr('cy', d => yScale(d[this.y]))
-            .attr('fill', 'grey')
+            .attr('fill', d => this.users[d.user_id])
             .attr('stroke', 'lightgrey')
             .attr('opacity', 0.8)
             .attr('r', 8);
