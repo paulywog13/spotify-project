@@ -1,0 +1,159 @@
+,id,name,album,artist,release_date,length,popularity,danceability,acousticness,danceability,energy,instrumentalness,liveness,loudness,speechiness,tempo,time_signature,user_id
+0,2cX2coZS1PYBfPs8wgbdWE,"More Than A Woman - From ""Saturday Night Fever"" Soundtrack",How Can You Mend A Broken Heart,Bee Gees,2020-11-20,196213,67,0.601,0.175,0.601,0.703,8.4e-05,0.571,-6.24,0.0379,106.164,4,1221063701
+1,0ofHAoxe9vBkTCp2UQIavz,Dreams - 2004 Remaster,Rumours (Super Deluxe),Fleetwood Mac,1977-02-04,257800,85,0.828,0.0644,0.828,0.492,0.00428,0.128,-9.744,0.0276,120.151,4,1221063701
+2,1tzcIjBCwsn4P7D0OsBiFi,The Lucky One,Thirteen Rules,Viernes 13,2015-01-13,267626,16,0.356,0.049,0.356,0.724,3.68e-05,0.271,-5.706,0.0378,163.452,4,1221063701
+3,1y4jsQt7MjnZhiD1L6qFBC,Cradles,Cradles,Sub Urban,2019-01-04,209829,74,0.534,0.256,0.534,0.589,6.02e-05,0.176,-1.865,0.325,78.616,4,1213961138
+4,34xLCJSfCdBPcPxZTRezwS,Dancing Is What to Do,Dancing Is What to Do,Ray-X,2019-05-21,257071,52,0.882,0.209,0.882,0.741,0.0,0.0871,-6.504,0.0383,119.995,4,1213961138
+5,5sbooPcNgIE22DwO0VNGUJ,POP/STARS,POP/STARS,K/DA,2018-11-03,191100,74,0.566,0.0183,0.566,0.769,0.0,0.108,-4.342,0.0872,170.036,4,1213961138
+6,2i0AUcEnsDm3dsqLrFWUCq,Tonight Tonight,Whatever,Hot Chelle Rae,2011-11-25,200466,73,0.686,0.0764,0.686,0.783,0.0,0.163,-4.977,0.119,99.978,4,1213961138
+7,4pIKFpwflOdhYNIRmPTj3E,Dance Macabre,Prequelle,Ghost,2018-06-01,219720,58,0.619,1.89e-05,0.619,0.696,0.00555,0.38,-6.269,0.0315,125.986,4,1213961138
+8,4xvB0wcMmNn7lcw1boRoA0,Where Will I Go,"Chasing The Golden Hour, Pt. 3",GRiZ,2020-09-17,196626,36,0.399,0.000111,0.399,0.875,0.772,0.0985,-6.109,0.0398,165.95,4,1221063701
+9,48vRKDOBxyVChwHAjU0SOf,The Best Day,"To All My Friends, Blood Makes The Blade Holy: The Atmosphere EP's",Atmosphere,2010-09-07,216893,53,0.882,0.358,0.882,0.624,0.0,0.0678,-5.372,0.0682,96.896,4,1221063701
+10,1L6ToRXIbr94VkOux95ftx,Doo Doo Doo,Doo Doo Doo,Cherub,2020-06-26,186425,20,0.544,0.0736,0.544,0.835,0.0,0.142,-4.446,0.0526,178.129,4,1221063701
+11,6PT1dLDHk9BaVwFG74pomG,Mercury in Retrograde,SOUND & FURY,Sturgill Simpson,2019-09-27,271588,50,0.713,0.0141,0.713,0.74,0.000429,0.717,-5.281,0.0384,125.028,4,1221063701
+12,57JVGBtBLCfHw2muk5416J,Another One Bites The Dust - Remastered 2011,The Game (Deluxe Remastered Version),Queen,1980-06-27,214653,71,0.933,0.112,0.933,0.528,0.329,0.163,-6.472,0.162,109.975,4,1221063701
+13,6eN1f9KNmiWEhpE2RhQqB5,Paradise City,Appetite For Destruction,Guns N' Roses,1987-07-21,405600,70,0.268,0.0192,0.268,0.98,0.00709,0.182,-5.958,0.103,100.315,4,1221063701
+14,1RIYF8NDIIWBvJe4vhQr6y,Good to Be Bad,Descendants 3 (Original TV Movie Soundtrack),Various Artists,2019-08-02,189868,58,0.843,0.106,0.843,0.893,0.0,0.32,-5.653,0.126,116.302,4,1221063701
+15,2jWuNKBlgkfb3M0WDKexY8,The Sinister Minister,Bela Fleck and the Flecktones,Béla Fleck and the Flecktones,1990,276986,42,0.77,0.192,0.77,0.588,0.803,0.0576,-9.844,0.0437,127.231,4,kukulski.2
+16,1BWsQm7kOBjK2aSFYg5HQZ,Shofukan,We Like It Here,Snarky Puppy,2014-02-25,393053,49,0.426,0.0642,0.426,0.754,0.765,0.701,-9.125,0.074,167.42,4,kukulski.2
+17,1DrlLvlYd1FIjNavRm6NdX,Back Pocket,Thrill of the Arts,Vulfpeck,2015-10-09,181259,61,0.839,0.478,0.839,0.585,0.00281,0.0435,-7.738,0.153,89.821,4,kukulski.2
+18,3Ti0GdlrotgwsAVBBugv0I,Can I Kick It?,People's Instinctive Travels and the Paths of Rhythm (25th Anniversary Edition),A Tribe Called Quest,1990-04-17,251573,69,0.848,0.173,0.848,0.666,0.000699,0.129,-6.547,0.274,96.662,4,kukulski.2
+19,4V3N5LvUOh3yDPP16cwAhE,Aquemini,Aquemini,Outkast,1998-09-29,319240,56,0.707,0.245,0.707,0.661,0.0,0.176,-5.711,0.39,89.197,4,kukulski.2
+20,5uRyMY1BpYJsoBHnPXdUWI,Happy Hour Hero,tin cans & car tires,moe.,1998-09-08,300440,39,0.48,0.353,0.48,0.785,0.00085,0.166,-7.528,0.0423,146.663,4,kukulski.2
+21,5uvwSoF1PlEKpbMFXOCMwV,In the Kitchen,Anchor Drops,Umphrey's McGee,2004-06-29,239453,41,0.688,0.203,0.688,0.698,0.000265,0.124,-7.299,0.0376,112.145,4,kukulski.2
+22,3GQmoKZvsd2P3G5OJLAZCp,DLZ,Dear Science,TV On The Radio,2008-01-01,228706,47,0.51,0.0298,0.51,0.872,0.00159,0.106,-3.985,0.0414,175.994,4,kukulski.2
+23,3aWGlZTQ4NM2RAf3KJiyoe,Foots,Stuff,Stuff,1976,242026,32,0.637,0.161,0.637,0.627,0.572,0.0703,-13.506,0.0418,103.673,4,kukulski.2
+24,6LgJvl0Xdtc73RJ1mmpotq,Paranoid Android,OK Computer,Radiohead,1997-05-28,387213,65,0.251,0.0377,0.251,0.848,0.00591,0.0545,-6.501,0.0579,163.709,4,kukulski.2
+25,2nuD3zk0lrBx1pfJ78jdA1,Unicorn,Free Ride,Dizzy Gillespie,1977-01-01,408706,46,0.845,0.118,0.845,0.519,0.507,0.0716,-11.498,0.0685,102.71,4,kukulski.2
+26,22Y1Gg0uugLCNP48yezX0q,Fett's Vette,Fett's Vette,MC Chris,2001-01-01,204875,43,0.882,0.172,0.882,0.638,0.0,0.128,-7.668,0.291,114.973,4,kukulski.2
+27,70QAZmaOxrSQGP2OMY5DUz,Do Leme Ao Pontal,World Psychedelic Classics 4: Nobody Can Live Forever: The Existential Soul of Tim Maia,Tim Maia,2012-10-02,192226,33,0.784,0.57,0.784,0.606,0.000388,0.176,-9.944,0.0549,98.197,4,kukulski.2
+28,6M14BiCN00nOsba4JaYsHW,Ocean Man,The Mollusk,Ween,1997-04-18,126946,63,0.72,0.551,0.72,0.912,0.00122,0.0982,-6.13,0.0363,122.782,4,kukulski.2
+29,1TQ6a2NEA8LmKfgf0yeBvT,Everybody's Free (To Wear Sunscreen),Everybody's Free (To Wear Sunscreen),Baz Luhrmann,1999-01-01,309133,49,0.827,0.639,0.827,0.526,8.2e-06,0.391,-13.365,0.363,91.552,4,kukulski.2
+30,1CQlnoCRkNEXMcY9DRT3aj,Girls Poop Too,Ladies Don't Spit,Reformed Whores,2012-10-23,133973,4,0.715,0.547,0.715,0.802,0.0,0.11,-8.477,0.214,114.888,4,kukulski.2
+31,2stkLJ0JNcXkIRDNF3ld6c,"You've Got a Friend in Me - From ""Toy Story""/Soundtrack Version",Toy Story,Randy Newman,1995-01-01,124160,67,0.689,0.817,0.689,0.333,5.13e-06,0.285,-12.134,0.0307,115.835,4,kukulski.2
+32,7I3SLjvJn3W1McqpVqJ2z9,Puppet String,Similar Skin,Umphrey's McGee,2014-06-10,389610,32,0.603,0.0125,0.603,0.652,0.00226,0.0458,-8.758,0.0397,97.019,4,kukulski.2
+33,1Bx3trnFdCStyiV5PF0vkj,T.I.B.W.F.,The Budos Band,The Budos Band,2005-11-29,160600,50,0.674,0.0124,0.674,0.607,0.87,0.147,-7.76,0.057,77.845,4,kukulski.2
+34,1ncSAZD0bzvU3cu0uPLbWd,Midnight in Harlem,Revelator,Tedeschi Trucks Band,2011-06-03,352666,55,0.447,0.35,0.447,0.557,0.0145,0.11,-9.92,0.035,152.058,4,kukulski.2
+35,0KzAbK6nItSqNh8q70tb0K,Where Is My Mind?,Death to the Pixies,Pixies,1997-10-06,229226,60,0.513,0.00731,0.513,0.442,0.000838,0.0878,-13.529,0.0343,81.201,4,kukulski.2
+36,5e8v4ibmsMHxHLALe5KaiZ,Electric Pow Wow Drum,A Tribe Called Red,The Halluci Nation,2013-03-12,219853,49,0.658,0.023,0.658,0.573,0.0613,0.0981,-5.408,0.107,133.442,4,1213961138
+37,1ENTZa8h3wgslMIAmoG2Qs,"Me, On The Beach",Dream Sounds,Nagisa Ni Te,2005-03-01,405693,19,0.605,0.438,0.605,0.237,0.0185,0.0659,-14.005,0.0404,92.189,4,1256631666
+38,0cQGsXrwDeTZdEqmDz9JBA,A Ballet,Domesticated,Sébastien Tellier,2020-05-29,286353,43,0.542,0.08,0.542,0.329,0.0835,0.0971,-12.462,0.0359,115.077,4,1256631666
+39,7sd72KZS8D59g5NmhxyHpJ,Toast,Rapture EP,Koffee,2019-03-14,191502,68,0.906,0.0342,0.906,0.638,1.7e-05,0.0725,-7.917,0.256,99.959,4,1256631666
+40,4oIQ6fbchoURJlv6UJJVkk,Baby Got Back,Tuxicity,Richard Cheese,2002,167133,30,0.667,0.0814,0.667,0.522,0.000252,0.0772,-8.701,0.0314,134.898,4,kukulski.2
+41,3teiQhs87vzsiJlxL9r3c2,Smells Like Drill Spirt - remix,Smells Like Drill Spirt (remix),Afroludi,2021-01-12,130142,60,0.688,0.0298,0.688,0.484,0.000649,0.134,-8.094,0.0339,140.052,4,1213961138
+42,0RtQHhM9OSNCaKf7YnzPZn,The Spy Hunter,Songs To Burn Bridges By,Project 86,2004-01-01,217756,31,0.468,0.000214,0.468,0.96,0.287,0.227,-4.012,0.0857,90.956,4,1213961138
+43,5NdxiycRi3nP2v7RJoAJIT,Your Hand In Mine,The Earth Is Not a Cold Dead Place,Explosions In The Sky,2003-11-04,496573,53,0.279,0.103,0.279,0.472,0.874,0.063,-16.42,0.0295,115.13,3,kukulski.2
+44,19C0LKY3DCcQtuviPJNy5d,Jerry Was A Race Car Driver,Sailing The Seas Of Cheese,Primus,1991-01-01,190840,62,0.508,0.0099,0.508,0.887,0.392,0.345,-12.377,0.0661,122.655,4,kukulski.2
+45,2ZIfv0fO740IFZdTJTP1JA,Raise Your Weapon - Madeon Extended Remix,Raise Your Weapon (Remixes),deadmau5,2011-01-01,257079,36,0.704,0.0183,0.704,0.696,1.79e-05,0.0727,-5.23,0.0549,126.066,4,1213961138
+46,4qxUFzBKlmP98kIRKFszju,Lights - Bassnectar Remix - Bonus Track,Lights,Ellie Goulding,2011-01-01,276626,47,0.529,0.00489,0.529,0.804,0.69,0.779,-4.882,0.029,140.004,4,1213961138
+47,7sVvY1tEvk5VfitXX2PDOk,Turn Off The Light,"Whoa, Nelly!",Nelly Furtado,2000-01-01,276106,43,0.587,0.0839,0.587,0.679,0.000316,0.413,-6.26,0.0927,180.184,4,1213961138
+48,5GHb72Wb3FiB29SOD4ZfoO,Head Splitter,Allegiance,Getter,2015-06-16,214400,45,0.739,0.00599,0.739,0.876,0.446,0.274,-6.771,0.0504,149.994,4,1213961138
+49,3IlYkyctlcTqXAZOA4ZPzz,Love Me Dead,"You're Awful, I Love You",Ludo,2007-01-01,260533,52,0.598,0.00158,0.598,0.794,0.0,0.0794,-2.551,0.055,120.917,4,1213961138
+50,1eYcLu1SAEUsO3YI85uwaI,Go-Getter Greg,"You're Awful, I Love You",Ludo,2007-01-01,191066,28,0.64,0.00489,0.64,0.904,1.49e-05,0.548,-4.021,0.101,134.916,4,1213961138
+51,0K9n8TBThz4xNAkF1eIlB6,Sweet Transvestite,The Rocky Horror Picture Show - Original Soundtrack,Various Artists,1975-01-10,204370,54,0.543,0.592,0.543,0.422,0.0,0.246,-12.243,0.383,107.146,4,1213961138
+52,5p7ujcrUXASCNwRaWNHR1C,Without Me,Without Me,Halsey,2018-10-04,201660,81,0.752,0.297,0.752,0.488,9.11e-06,0.0936,-7.05,0.0705,136.041,4,1213961138
+53,1akgiRM3mN2nxu2AX6ACCW,I Love College,Asleep In The Bread Aisle,Asher Roth,2009-01-01,241933,61,0.713,0.0897,0.713,0.826,0.0,0.421,-4.075,0.243,86.444,4,1221063701
+54,10qnLYMfMcYJwR8DwGHJKE,Make Me Feel Good,A Future in Blue,Zoogma,2017-08-04,260000,40,0.559,0.0107,0.559,0.932,0.000221,0.283,-1.777,0.267,159.985,4,1221063701
+55,5EkRJITdPG60ovDdCE3B3V,My Boo,My Boo,Brasstracks,2020-12-11,138805,44,0.744,0.0172,0.744,0.472,0.864,0.158,-7.321,0.202,136.924,4,1221063701
+56,4FX4z1AZVgXmGHI3HPvvOo,Just Exist,Just Exist,Eliza & The Delusionals,2019-05-16,237085,44,0.542,0.0495,0.542,0.872,9.81e-05,0.0819,-2.553,0.0402,137.975,4,1221063701
+57,1w2b6f5Cgwy8ZmKdHUBSiW,Teenage Dirtbag,Wheatus,Wheatus,2000-07-25,241666,49,0.624,0.34,0.624,0.854,0.00013,0.17,-3.891,0.0513,94.651,4,1221063701
+58,6jlsVLKMRfHoDJbo5qMQ71,Gloria,Tutto Tozzi,Umberto Tozzi,2006-04-28,262733,37,0.748,0.0801,0.748,0.923,0.0,0.423,-3.165,0.057,131.76,4,1221063701
+59,63vL5oxWrlvaJ0ayNaQnbX,Istanbul (Not Constantinople),Flood,They Might Be Giants,1990-01-02,153813,65,0.688,0.0801,0.688,0.748,0.00453,0.136,-9.39,0.0377,114.144,4,1221063701
+60,5FnyVsDPOblZ8gVvaXta9z,"Mahna, Mahna",b-sides and rarities,Cake,2007-11-13,174066,44,0.742,0.213,0.742,0.483,0.471,0.0733,-11.369,0.155,89.883,4,1221063701
+61,1nUeBKMsacPjvE3aczMHnG,Tijuana Sunrise,The Knife,Goldfinger,2017-07-21,218487,47,0.544,0.126,0.544,0.843,0.0,0.357,-5.052,0.0942,168.044,4,1221063701
+62,4X3qGigyU6ARi3HP4lWD95,Superman,Hang-Ups,Goldfinger,1998-06-01,185026,63,0.429,0.000131,0.429,0.937,0.0002,0.0807,-3.986,0.0573,194.838,4,1221063701
+63,1DcJbLjuRIZ1TBY4P3YX8a,Spliff,Meeting On the Mountain,Fruition & Grant Farm,2014-09-23,186283,15,0.551,0.581,0.551,0.815,0.0229,0.125,-5.145,0.0398,94.535,4,1221063701
+64,1erBt7EF3vdkBGdR5WcIDp,Lazy Gold,Meeting On the Mountain,Fruition & Grant Farm,2014-09-23,248154,9,0.446,0.614,0.446,0.623,0.446,0.285,-6.261,0.0282,151.783,4,1221063701
+65,5A50MU6c2KJl3NzVUomrzY,I-70,Happy Trails (American Kestrel Falco Sparverius),Rapidgrass,2017-06-24,225493,10,0.602,0.489,0.602,0.606,1.42e-05,0.105,-9.075,0.0329,105.156,4,1221063701
+66,1aG6z2rVKmLrgqoXcxzxFS,Three Sisters,Shadowbox,Beats Antique,2016-10-05,239500,41,0.629,0.00767,0.629,0.685,0.481,0.0955,-4.346,0.063,148.107,4,1221063701
+67,0Jk5J9HrDmCEKV7xYmaB6m,Beauty Beats,Collide,Beats Antique,2008-08-26,225000,43,0.601,0.0575,0.601,0.755,0.887,0.347,-5.528,0.0405,180.02,4,1221063701
+68,3anOLstTVypgnV5yVNLmc7,As We Proceed,As We Proceed,GRiZMATiK,2017-01-20,260069,43,0.61,0.0168,0.61,0.83,0.0119,0.0927,-2.974,0.0636,109.946,4,1221063701
+69,4NE3oWyUQI2b2NjyMyC8Bi,Turtles All the Way Down,Metamodern Sounds in Country Music,Sturgill Simpson,2014-05-13,188186,58,0.553,0.306,0.553,0.314,0.000578,0.104,-9.217,0.0396,91.7,4,1221063701
+70,4pNiE4LCVV74vfIBaUHm1b,Sir Duke,Songs In The Key Of Life,Stevie Wonder,1976-09-28,232760,69,0.588,0.16,0.588,0.568,0.0,0.0792,-9.766,0.0672,106.938,4,kukulski.2
+71,2qOm7ukLyHUXWyR4ZWLwxA,It Was A Good Day,The Predator,Ice Cube,1992-11-17,260000,75,0.798,0.33,0.798,0.744,0.000106,0.292,-5.328,0.136,82.356,4,1221063701
+72,4faZbPZPQAmHADVtQNsv5E,Hotel Yorba,White Blood Cells,The White Stripes,2001-07-03,130333,51,0.385,0.446,0.385,0.793,0.0,0.0762,-2.647,0.0943,194.735,4,1221063701
+73,3MsWy7Is42kx8OImv41rUG,I'm Slowly Turning Into You,Icky Thump,The White Stripes,2007-06-15,274533,38,0.336,0.0236,0.336,0.67,0.0257,0.346,-5.623,0.0627,80.272,4,1221063701
+74,0nyrltZrQGAJMBZc1bYvuQ,Get Up Offa That Thing,20 All-Time Greatest Hits!,James Brown,1991,250200,50,0.883,0.225,0.883,0.664,2.3e-06,0.941,-10.395,0.411,118.104,4,1221063701
+75,4w7lkCQaEtqGwRMuDAI7ok,Калинка - малинка,Сборник 2,Бурёнка Даша,2017-11-11,141686,26,0.494,0.62,0.494,0.712,0.0,0.339,-7.225,0.0405,114.151,4,1221063701
+76,3vnGRHbTtEJXprw7MzJ8H7,too all the ladies in the place,she says it's too much,Bassti,2017-07-14,125933,54,0.699,0.94,0.699,0.117,0.109,0.14,-17.311,0.392,82.998,4,1239315253
+77,0oks4FnzhNp5QPTZtoet7c,Giorgio by Moroder,Random Access Memories,Daft Punk,2013-05-17,544626,61,0.74,0.0692,0.74,0.682,0.53,0.381,-10.42,0.0504,113.201,4,1239315253
+78,0UWa0AdUscdQUI7mjjx6G1,2049,Blade Runner 2049 (Original Motion Picture Soundtrack),Hans Zimmer,2017-10-05,217793,52,0.0854,0.07,0.0854,0.166,0.882,0.117,-19.743,0.0429,66.695,3,1239315253
+79,6pWgRkpqVfxnj3WuIcJ7WP,Cornfield Chase,Interstellar (Original Motion Picture Soundtrack) [Expanded Edition],Hans Zimmer,2014-11-18,126959,67,0.18,0.951,0.18,0.226,0.982,0.0998,-16.457,0.042,94.079,4,1239315253
+80,2nNrKyHU5JnQ8YkrmH0UgG,Little Taste of Heaven,Roman Candles,Leach,2015-05-15,236230,53,0.464,0.295,0.464,0.613,0.447,0.0585,-9.82,0.31,79.975,4,1239315253
+81,64hujgSlQDUajo6bSGRfyG,Ooh Child,Crooklyn Volume 1 (Music From The Motion Picture),Various Artists,1994-01-01,197040,0,0.498,0.00404,0.498,0.595,8.37e-05,0.64,-9.461,0.0479,87.365,4,1239315253
+82,5a8aSgJQmTJXrnAcEa1Kqv,Прованс,Точки расставлены,Yolka,2014-11-14,204753,43,0.626,0.361,0.626,0.859,0.0,0.101,-4.044,0.0322,99.967,4,1221063701
+83,19wgIwKRVTuKbKJB0lnCG5,The King,The King,Timmy Trumpet,2020-07-03,153200,56,0.797,0.0961,0.797,0.656,0.49,0.0461,-5.74,0.0948,149.998,4,1213961138
+84,5iFhkFf9JLA3XiROdYsg1i,7 элемент,Философия чуда,Vitas,2001,250000,54,0.717,0.371,0.717,0.8,0.158,0.327,-5.794,0.0497,129.642,4,1213961138
+85,3SOTIisLXPEAZZ8hpvX9p5,Pala Tute,Trans-Continental Hustle,Gogol Bordello,2010-01-01,245093,27,0.643,0.00598,0.643,0.916,6.11e-06,0.056,-3.12,0.0947,125.768,4,1221063701
+86,7s4JCyY8YIZSsKvtwStBQ6,Rain King,August And Everything After,Counting Crows,1993-01-01,255773,53,0.479,0.507,0.479,0.883,0.0,0.305,-6.744,0.0649,78.592,4,5x3jsdd20gyv86pg2naw63zwp
+87,3GwIz1pLK6M2M0qp032McP,Anna Begins,August And Everything After,Counting Crows,1993-01-01,271173,48,0.511,0.373,0.511,0.382,0.000353,0.08,-8.468,0.0453,113.423,5,5x3jsdd20gyv86pg2naw63zwp
+88,5M7oyXhGtTPA4TuCimV47C,No One Survives,Stench,Nekrogoblikon,2011-07-19,256119,39,0.239,2.2e-05,0.239,0.989,0.614,0.492,-4.563,0.275,169.922,4,1213961138
+89,1dfHpGeaXunLRNvzSZOZtc,Show Yourself,Emperor of Sand,Mastodon,2017-03-31,182893,52,0.468,4.99e-06,0.468,0.977,0.0213,0.0543,-4.198,0.0645,134.996,4,1213961138
+90,5KtLPs8pkSRKsnOZOmIg8k,Powercore,power,Nekrogoblikon,2013-08-27,236093,41,0.393,0.004,0.393,0.991,0.0,0.135,-4.35,0.348,199.907,4,1213961138
+91,4F4TGsDYacEbw4PLAIyJ2e,Skibidi,"Antipositive, Pt. 2",Little Big,2018-10-05,163282,59,0.872,8.14e-05,0.872,0.758,0.387,0.0632,-6.006,0.0542,131.995,4,1213961138
+92,5Og3LD4nFpB2ot0WSS05xf,Look Around,Four,Blues Traveler,1994-01-01,341760,31,0.537,0.305,0.537,0.662,0.0103,0.152,-6.84,0.0301,127.038,4,5x3jsdd20gyv86pg2naw63zwp
+93,3umt5o0TAOycqVfhqNW4I9,Sister,Are You Gonna Go My Way,Lenny Kravitz,1993-03-09,424933,40,0.616,0.0103,0.616,0.335,0.00823,0.0675,-14.415,0.0345,138.008,4,5x3jsdd20gyv86pg2naw63zwp
+94,5Xl8wvp7rKr5lEDUxlGDnB,"White, Discussion",Throwing Copper,Live,1994-01-01,366146,35,0.434,0.00173,0.434,0.907,0.00803,0.518,-6.225,0.0524,94.41,4,5x3jsdd20gyv86pg2naw63zwp
+95,0LAcM6I7ijW4VVW0aytl1t,One (Remastered),...And Justice for All (Remastered Deluxe Box Set),Metallica,1988-09-07,446145,66,0.438,0.000668,0.438,0.687,0.0801,0.42,-9.15,0.0619,103.01,3,5x3jsdd20gyv86pg2naw63zwp
+96,57MflfPN3ObQQAQtPUp0WF,Romeo and Juliet,Making Movies,Dire Straits,1980-10-17,361395,53,0.602,0.437,0.602,0.574,0.00415,0.0751,-8.169,0.0278,87.318,4,5x3jsdd20gyv86pg2naw63zwp
+97,6cr6UDpkjEaMQ80OjWqEBQ,Sultans of Swing,Dire Straits,Dire Straits,1978-10-07,350400,65,0.73,0.0632,0.73,0.868,0.0661,0.318,-7.325,0.0288,148.217,4,5x3jsdd20gyv86pg2naw63zwp
+98,3SdTKo2uVsxFblQjpScoHy,Stand by Me,Don't Play That Song (Mono),Ben E. King,1962-08-20,180055,76,0.65,0.57,0.65,0.306,7.07e-06,0.0707,-9.443,0.0393,118.068,4,5x3jsdd20gyv86pg2naw63zwp
+99,7pX7v3nQCz2bzPI02cbLmB,Cookie Thumper!,Donker Mag,Die Antwoord,2014-06-03,200225,54,0.784,0.0891,0.784,0.795,0.0,0.326,-4.159,0.225,133.938,4,1213961138
+100,6znkBTmxxczNEvXrrK3zpY,The Beauty Of Gray,Mental Jewelry,Live,1991-01-01,252906,35,0.701,0.0765,0.701,0.545,0.0,0.106,-10.207,0.101,128.83,4,5x3jsdd20gyv86pg2naw63zwp
+101,3vFk6g15YAzFtpJFRKBlIW,The Dance,Strummin' On Garth,Brooks Jefferson,2015-03-13,219242,54,0.539,0.811,0.539,0.374,0.000464,0.11,-7.434,0.0273,135.113,4,5x3jsdd20gyv86pg2naw63zwp
+102,7rmUSOrOLRBzI8Uq63qYcR,Baby's on Fire,Ten$ion,Die Antwoord,2012-01-31,236840,61,0.829,0.0521,0.829,0.844,0.00148,0.171,-4.329,0.0966,130.04,4,1213961138
+103,70C4NyhjD5OZUMzvWZ3njJ,Piano Man,Piano Man (Legacy Edition),Billy Joel,1973-11-07,339000,74,0.331,0.605,0.331,0.55,3.96e-06,0.192,-6.483,0.0272,177.734,3,5x3jsdd20gyv86pg2naw63zwp
+104,38zsOOcu31XbbYj9BIPUF1,Your Song,Elton John,Elton John,1970-04-10,241786,76,0.554,0.828,0.554,0.315,5.53e-06,0.101,-11.028,0.0298,128.157,4,5x3jsdd20gyv86pg2naw63zwp
+105,7LdmWwc051HI5Y6O6P9GkK,Ridiculous Thoughts - Remastered 2020,No Need To Argue (Deluxe),The Cranberries,2020-11-13,273426,33,0.427,0.00497,0.427,0.824,1.56e-05,0.092,-6.107,0.0411,102.131,4,5x3jsdd20gyv86pg2naw63zwp
+106,3BEZCNZSmVv30vsMNSOCri,"Layla - Acoustic; Live at MTV Unplugged, Bray Film Studios, Windsor, England, UK, 1/16/1992; 2013 Remaster",Unplugged (Deluxe Edition),Eric Clapton,1992-08-25,289026,69,0.558,0.321,0.558,0.524,0.000952,0.94,-11.626,0.0459,93.654,4,5x3jsdd20gyv86pg2naw63zwp
+107,0VokHXtSNOpnlMWDMT9kPD,Walking in My Shoes - 2006 Remaster,Songs of Faith and Devotion (2006 Remaster),Depeche Mode,1993-03-22,326106,46,0.535,0.0888,0.535,0.702,8.54e-06,0.302,-9.804,0.0294,93.083,4,5x3jsdd20gyv86pg2naw63zwp
+108,6ZOBP3NvffbU4SZcrnt1k6,Kryptonite,The Better Life,3 Doors Down,2000,233933,77,0.545,0.00664,0.545,0.865,1.1e-05,0.168,-5.708,0.0286,99.009,4,5x3jsdd20gyv86pg2naw63zwp
+109,7wpYSigAhQeZp3cdsMQ3Af,Glycerine,Sixteen Stone (Remastered),Bush,2014-10-14,266493,62,0.437,0.0371,0.437,0.337,0.000946,0.0981,-11.439,0.0326,114.239,4,5x3jsdd20gyv86pg2naw63zwp
+110,3gUFcAz4TdQ2vA5CaNNw5e,Circle,Sister Sweetly,Big Head Todd and The Monsters,1993-02-23,370466,33,0.525,0.0141,0.525,0.728,0.000211,0.695,-7.758,0.0381,152.022,4,5x3jsdd20gyv86pg2naw63zwp
+111,3lcP1anKWxdp6IRNF9vGhu,Superman's Song,The Ghosts That Haunt Me,Crash Test Dummies,1991-04-05,271600,41,0.406,0.613,0.406,0.124,1.08e-06,0.108,-19.825,0.0342,168.4,4,5x3jsdd20gyv86pg2naw63zwp
+112,21jEuMn2lf37715rwjow2M,The Freshmen,Villains,The Verve Pipe,1996-03-25,269466,61,0.571,0.0757,0.571,0.505,1.04e-05,0.109,-9.312,0.0238,99.562,4,5x3jsdd20gyv86pg2naw63zwp
+113,0yoSMnMxgBw9NH6QIN6ZFT,Jesus Freak - Owl City Remix,Jesus Freak (Owl City Remix),DC Talk,2021-01-01,259083,40,0.731,0.0323,0.731,0.892,0.000398,0.287,-2.901,0.0492,104.499,4,5x3jsdd20gyv86pg2naw63zwp
+114,0z1b34WikhOH9ZxU8QDWcv,One Headlight,Bringing Down The Horse,The Wallflowers,1996-01-01,312626,69,0.701,0.000655,0.701,0.539,0.005,0.0589,-8.968,0.0277,107.531,4,5x3jsdd20gyv86pg2naw63zwp
+115,5l6hpyTGBK0LAAxgPnqTQL,Look After You,How To Save A Life,The Fray,2005-09-13,266773,64,0.447,0.0575,0.447,0.592,4.47e-06,0.13,-3.015,0.0319,78.039,4,5x3jsdd20gyv86pg2naw63zwp
+116,7yuWHdSLrknIYMgbkdmPOS,Heartless,Through the Years: The Best of The Fray,The Fray,2016-11-04,255906,48,0.394,0.675,0.394,0.693,0.0,0.115,-6.993,0.0938,164.004,4,5x3jsdd20gyv86pg2naw63zwp
+117,1v76a0cGfdWYWdSP9IUCiw,Who Am I?,Autopilot,The Samples,1994-09-12,293093,5,0.663,0.149,0.663,0.597,0.171,0.0399,-8.668,0.0267,120.099,4,5x3jsdd20gyv86pg2naw63zwp
+118,2wmEryA2YLaFwFvA63n3O2,Don't Take The Girl,Not A Moment Too Soon,Tim McGraw,1994-03-22,249360,58,0.439,0.279,0.439,0.454,0.0,0.123,-8.669,0.0308,204.263,4,5x3jsdd20gyv86pg2naw63zwp
+119,0Anb7B9hNq5yXUAy4DBLLU,No Woman No Cry,Legend (Deluxe Edition),Bob Marley & The Wailers,1984-05-01,251066,52,0.863,0.0699,0.863,0.433,0.0,0.0553,-11.1,0.0383,97.067,4,5x3jsdd20gyv86pg2naw63zwp
+120,1ju7EsSGvRybSNEsRvc7qY,Simple Man,Pronounced' Leh-'Nerd 'Skin-'Nerd,Lynyrd Skynyrd,1973-01-01,356626,68,0.422,0.0366,0.422,0.752,0.000119,0.129,-8.682,0.0449,120.471,4,5x3jsdd20gyv86pg2naw63zwp
+121,3pRaLNL3b8x5uBOcsgvdqM,Hallelujah,Grace,Jeff Buckley,1994,413826,71,0.324,0.931,0.324,0.136,0.00117,0.176,-10.33,0.0318,97.256,3,5x3jsdd20gyv86pg2naw63zwp
+122,5uCax9HTNlzGybIStD3vDh,Say You Won't Let Go,Back from the Edge,James Arthur,2016-10-28,211466,84,0.358,0.695,0.358,0.557,0.0,0.0902,-7.398,0.059,85.043,4,5x3jsdd20gyv86pg2naw63zwp
+123,4Of7rzpRpV1mWRbhp5rAqG,Bruises,Divinely Uninspired To A Hellish Extent,Lewis Capaldi,2019-05-17,220492,82,0.736,0.946,0.736,0.308,0.0,0.186,-7.83,0.0677,111.202,4,5x3jsdd20gyv86pg2naw63zwp
+124,6gxycjJNMgmAyfzUXBN80P,Goodbye My Lover,Back to Bedlam,James Blunt,2005-08-08,258653,66,0.432,0.953,0.432,0.261,0.00342,0.0903,-12.591,0.0512,89.567,4,5x3jsdd20gyv86pg2naw63zwp
+125,15NNe4V26FOiwagrNb4lbS,"Once Upon a December (From The ""Anastasia"" Soundtrack)",The Essential Liz Callaway,Liz Callaway,2015-11-24,168733,55,0.268,0.646,0.268,0.305,2.5e-05,0.169,-12.608,0.0379,135.806,3,1213961138
+126,2bpZ4vkTOyTTmy2yI2hrip,Broken Angel,All We Have Left,Boyce Avenue,2010-06-15,321226,34,0.338,0.0609,0.338,0.758,0.0,0.366,-3.739,0.0345,165.822,3,5x3jsdd20gyv86pg2naw63zwp
+127,1hk75vzQeF2UfPwTUbVWLn,The Distance,Fashion Nugget,Cake,1996,179653,53,0.463,0.00796,0.463,0.749,0.00219,0.0558,-8.118,0.0891,183.048,4,5x3jsdd20gyv86pg2naw63zwp
+128,1ZxRMkUg6O3N1KcQWLc2rg,How Does A Duck Know?,God Shuffled His Feet,Crash Test Dummies,1993-04-05,222426,31,0.69,0.0017,0.69,0.805,0.0283,0.162,-6.454,0.0405,98.02,4,5x3jsdd20gyv86pg2naw63zwp
+129,5Mw9bXG1dLNhbjofkVS2oR,Oceans (Where Feet May Fail),Zion (Deluxe Edition),Hillsong UNITED,2013-02-26,535962,67,0.262,0.508,0.262,0.361,0.00268,0.108,-10.187,0.0333,126.786,4,5x3jsdd20gyv86pg2naw63zwp
+130,0pv9Mg8pV2mT3gffu2QZkM,Aloha Ke Akua,Dark As Night,Nahko And Medicine For The People,2013-05-21,356625,43,0.488,0.0546,0.488,0.676,0.0,0.0986,-6.532,0.0989,122.891,4,5x3jsdd20gyv86pg2naw63zwp
+131,25U7raB3ZSszayTYClh4hF,Somewhere Over The Rainbow_What A Wonderful World,Facing Future,Israel Kamakawiwo'ole,1993-11-01,308026,68,0.663,0.928,0.663,0.168,5.68e-05,0.361,-13.725,0.0448,85.005,4,5x3jsdd20gyv86pg2naw63zwp
+132,24Pm25g7lQ0jOubNsXMcCf,Ya Got Trouble,The Music Man (Original Broadway Cast),Original Broadway Cast,1958-01-01,227666,35,0.677,0.475,0.677,0.419,0.0,0.473,-14.513,0.703,121.588,4,1213961138
+133,2XVos0r3E8DwB4bFUTO0B5,Shipoopi,The Music Man (Original Broadway Cast),Original Broadway Cast,1958-01-01,131626,29,0.634,0.339,0.634,0.495,0.0,0.299,-11.078,0.198,140.702,4,1213961138
+134,1Cj2vqUwlJVG27gJrun92y,The Sound of Silence,Immortalized,Disturbed,2015-08-21,248466,71,0.322,0.468,0.322,0.28,1.1e-06,0.102,-9.367,0.0281,85.794,4,5x3jsdd20gyv86pg2naw63zwp
+135,04Dqz6T7vL4APHblHSdR4q,The Boxer,Babel (Deluxe Version),Mumford & Sons,2012-09-25,245400,45,0.467,0.649,0.467,0.37,4.42e-05,0.0949,-11.231,0.032,98.646,4,5x3jsdd20gyv86pg2naw63zwp
+136,7Kho44itYaCQZvZQVV2SLW,Head Full Of Doubt/Road Full Of Promise,I And Love And You,The Avett Brothers,2009-01-01,287986,57,0.309,0.399,0.309,0.459,1.34e-05,0.12,-7.29,0.0347,175.809,3,5x3jsdd20gyv86pg2naw63zwp
+137,5Xak5fmy089t0FYmh3VJiY,Black,Ten,Pearl Jam,1991-08-27,342653,72,0.36,0.323,0.36,0.684,0.0,0.34,-6.457,0.0308,77.15,4,5x3jsdd20gyv86pg2naw63zwp
+138,6i81qFkru6Kj1IEsB7KNp2,Just Breathe,Backspacer,Pearl Jam,2009-09-19,215853,68,0.473,0.721,0.473,0.348,7.42e-05,0.0823,-11.1,0.0288,107.819,4,5x3jsdd20gyv86pg2naw63zwp
+139,0W7AbEauB7cP4pidLclApe,Hunger Strike,Temple Of The Dog,Temple Of The Dog,1990-01-01,246266,59,0.373,0.0236,0.373,0.567,3.47e-06,0.0916,-10.835,0.032,137.789,4,5x3jsdd20gyv86pg2naw63zwp
+140,0YwNdeDFbGP6AGwsQrtzdY,I Am A Man Of Constant Sorrow - Radio Edit,"O Brother, Where Art Thou? (Original Motion Picture Soundtrack)",Various Artists,2000-12-05,190000,60,0.564,0.666,0.564,0.328,0.0,0.0915,-13.096,0.0292,85.881,4,5x3jsdd20gyv86pg2naw63zwp
+141,28cnXtME493VX9NOw9cIUh,Hurt,American IV: The Man Comes Around,Johnny Cash,2002-01-01,216533,74,0.534,0.649,0.534,0.392,0.000227,0.0948,-7.636,0.0267,90.379,4,5x3jsdd20gyv86pg2naw63zwp
+142,5Tkrz3KSoAOGN4Y97TUqZU,Shit Towne,Throwing Copper,Live,1994-01-01,228066,38,0.267,0.000283,0.267,0.885,0.000333,0.0795,-5.778,0.0571,128.384,4,5x3jsdd20gyv86pg2naw63zwp
+143,606WoZeEY2gs7wCne8VPUN,"El Tango De Roxanne - From ""Moulin Rouge"" Soundtrack",Moulin Rouge,Various Artists,2001-01-01,283933,47,0.322,0.524,0.322,0.473,0.0457,0.222,-7.644,0.0466,128.987,4,5x3jsdd20gyv86pg2naw63zwp
+144,0HZhYMZOcUzZKSFwPOti6m,Jar of Hearts,lovestrong.,Christina Perri,2011-05-10,246587,72,0.349,0.726,0.349,0.348,0.0,0.12,-6.142,0.0316,74.541,4,5x3jsdd20gyv86pg2naw63zwp
+145,4qN7nSAVTjPfOOz0wkRQpM,In Your Eyes - 2012 Remaster,So (2012 Remastered),Peter Gabriel,1986-05-19,330373,53,0.621,0.0632,0.621,0.645,9.63e-06,0.0703,-9.37,0.0352,89.284,4,5x3jsdd20gyv86pg2naw63zwp
+146,6Vc5wAMmXdKIAM7WUoEb7N,Say Something,Is There Anybody Out There?,A Great Big World,2014-01-20,229400,75,0.407,0.857,0.407,0.147,2.89e-06,0.0913,-8.822,0.0355,141.284,3,5x3jsdd20gyv86pg2naw63zwp
+147,4gvea7UlDkAvsJBPZAd4oB,The Boys Of Summer,Building The Perfect Beast,Don Henley,1984-01-01,288733,75,0.516,0.501,0.516,0.549,0.00572,0.184,-13.741,0.0373,176.941,4,5x3jsdd20gyv86pg2naw63zwp
+148,2TjnCxxQRYn56Ye8gkUKiW,Desperado - 2013 Remaster,Desperado (2013 Remaster),Eagles,1973,213712,66,0.228,0.946,0.228,0.224,0.000222,0.273,-12.749,0.0311,60.3,4,5x3jsdd20gyv86pg2naw63zwp
+149,04UWtAIMwi67MG8uHwYqgK,Joey,Bloodletting,Concrete Blonde,1990-09-16,248959,56,0.607,0.0151,0.607,0.788,0.0136,0.173,-5.326,0.0293,118.696,4,5x3jsdd20gyv86pg2naw63zwp
+150,3ZE3wv8V3w2T2f7nOCjV0N,Life on Mars? - 2015 Remaster,Hunky Dory (2015 Remaster),David Bowie,1971-12-17,235986,70,0.442,0.639,0.442,0.384,7.7e-05,0.0539,-14.635,0.0414,123.281,4,kukulski.2
+151,6aBUnkXuCEQQHAlTokv9or,This Must Be the Place (Naive Melody) - 2005 Remaster,Speaking in Tongues (Deluxe Version),Talking Heads,1983-05-31,296146,70,0.942,0.331,0.942,0.641,0.179,0.028,-10.15,0.0333,114.443,4,kukulski.2
+152,4lJ6YVXQ0jUk5ILu0PSrA4,Ooh La La,Ooh La La,Faces,1973,214080,68,0.601,0.579,0.601,0.574,1.14e-05,0.216,-8.166,0.03,147.964,4,kukulski.2
+153,47W6YR93MPCGLEUReLMyDm,Virtual Insanity - Remastered,High Times: Singles 1992-2006 (Remastered),Jamiroquai,2006-11-06,229360,68,0.662,0.127,0.662,0.949,0.0,0.135,-4.758,0.108,91.954,4,kukulski.2
+154,0d28khcov6AiegSCpG5TuT,Feel Good Inc.,Demon Days,Gorillaz,2005-05-23,222640,80,0.818,0.00836,0.818,0.705,0.00233,0.613,-6.679,0.177,138.559,4,kukulski.2
+155,4G92yYrUs0cvY7G41YRI0z,Jealous,Jealous - EP,Labrinth,2014-11-23,287693,77,0.439,0.874,0.439,0.153,0.0,0.107,-8.95,0.0479,116.76,3,1213961138
+156,4WkLyrueqyBQRAifCV0Ind,Monophobia - Extended Mix,mau5ville: Level 1,deadmau5,2018-07-13,600000,38,0.664,0.0217,0.664,0.573,0.0283,0.107,-6.875,0.0473,128.003,4,1221063701
+157,3DofXqoNWqAnzNpSXtSp4R,Murdermile,No Wow,The Kills,2005-02-19,265306,25,0.76,0.369,0.76,0.847,0.139,0.0777,-5.589,0.0428,144.116,4,1221063701
