@@ -9,6 +9,9 @@ libsass = "*"
 pandas = "*"
 numpy = "*"
 pymongo = "*"
+spotipy = "*"
+parse = "*"
+requests = "*"
 
 [dev-packages]
 
