@@ -1,3 +1,12 @@
+#Dependencies
+
+from dateutil.parser import parse as parse_date
+import pandas as pd
+import spotipy as sp
+import requests
+from pprint import pprint
+import time
+
 #Read Playlist to pull data from Spotify API
 
 playlist = sp.user_playlist(user_id, playlist_id)
@@ -16,6 +25,14 @@ tracks_df = pd.DataFrame([(track['track']['id'],
                            parse_date(track['added_at']))
                           for track in playlist['tracks']['items']],
                          columns=['id', 'artist', 'name', 'user_id', 'release_date', 'added_at'])
+
+
+token = util.prompt_for_user_token(user_id,
+                                   'playlist-read-collaborative',
+                                   client_id,
+                                   client_secret,
+                                   redirect_uri)
+sp = spotipy.Spotify(auth=token)
 
 # Artist ID in Dataframe
 artist_id = pd.DataFrame(artist_id['id'])
@@ -64,8 +81,6 @@ for i in range(len(song_id_list)):
   time.sleep(.1)
   track = getTrackFeatures(song_id_list[i])
   tracks.append(track)
-
-pprint(tracks)
 
 # create song dataset
 song_data = pd.DataFrame(tracks, columns = ['id','name', 'album', 'artist', 'release_date', 'length', 'popularity', 'danceability', 'acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo', 'time_signature'])
