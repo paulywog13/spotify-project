@@ -12,7 +12,14 @@ const app = new Vue({
         tracks: [],
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
-        users: [],
+        users: [
+            {id: '1221063701', name: 'Charles Stephens', color: '#92DCE5'},
+            {id: '1213961138', name: 'Tempest Campbell', color: '#D64933'},
+            {id: 'kukulski.2', name: 'Matt Kukulski', color: '#7D70BA'},
+            {id: '1256631666', name: 'Stu Yates', color: '#f1d302'},
+            {id: '1239315253', name: 'John Edward Shuford', color: '#ace4aa'},
+            {id: '5x3jsdd20gyv86pg2naw63zwp', name: 'Pauly Richmeier', color: '#f84aa7'}
+        ],
         loading: true,
         error: null,
     },
@@ -23,22 +30,11 @@ const app = new Vue({
                 .join(' ');
         },
     },
-    computed: {
-        colorCodes: function () {
-            const colors = ['#92DCE5', '#D64933', '#7D70BA', '#f1d302', '#ace4aa', '#f84aa7'];
-            const colorCodes = {};
-            this.users.forEach((user, index) => colorCodes[user] = colors[index]);
-            console.log(colorCodes)
-            return colorCodes;
-        }
-    },
     created: function () {
         d3.json('http://127.0.0.1:5000/data')
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
-                this.users = [...new Set(data.map(track => track.user_id))];
-                console.log(this.users);
             })
             .catch(err => {
                 this.error = err;

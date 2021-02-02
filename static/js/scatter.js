@@ -5,7 +5,7 @@ const Scatter = Vue.component('scatter', {
         tracks: Array,
         x: String,
         y: String,
-        users: Object,
+        users: Array,
     },
     template: `<svg :width="params.tWidth" :height="params.tHeight" class="has-background-dark has-text-white">
                     <g class="chart-group" :transform="'translate(' + params.mLeft + ', ' + params.mTop + ')'">
@@ -120,7 +120,7 @@ const Scatter = Vue.component('scatter', {
             .append('circle')
             .attr('cx', d => xScale(d[this.x]))
             .attr('cy', d => yScale(d[this.y]))
-            .attr('fill', d => this.users[d.user_id])
+            .attr('fill', d => this.users.find(user => user.id === d.user_id).color)
             .attr('stroke', 'lightgrey')
             .attr('opacity', 0.8)
             .attr('r', 8);
