@@ -12,6 +12,7 @@ const app = new Vue({
         tracks: [],
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
+        users: [],
         loading: true,
         error: null,
     },
@@ -22,12 +23,22 @@ const app = new Vue({
                 .join(' ');
         },
     },
+    computed: {
+        colorCodes: function () {
+            const colors = ['#92DCE5', '#D64933', '#7D70BA', '#f1d302', '#ace4aa', '#f84aa7'];
+            const colorCodes = {};
+            this.users.forEach((user, index) => colorCodes[user] = colors[index]);
+            console.log(colorCodes)
+            return colorCodes;
+        }
+    },
     created: function () {
         d3.json('http://127.0.0.1:5000/data')
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
-                console.log(data);
+                this.users = [...new Set(data.map(track => track.user_id))];
+                console.log(this.users);
             })
             .catch(err => {
                 this.error = err;

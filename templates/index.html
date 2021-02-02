@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spotify Project</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,173 +11,101 @@
 </head>
 
 <body>
-  <div class="container is-fluid">
-  <section class="hero is-success">
-    <div class="hero-body text-center">
-      <p class="title">
-        Spotify Playlist
-      </p>
-      <p></p>
-      <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>
-      <p class="subtitle">
-        How does the music move you?
-      </p>
-    </div>
-  </section>
-</div>
-  <!-- <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1 >Spotify Playlist Project</h1>
-      <p></p>
-      <p><a class="btn btn-primary btn-lg" href="/data" role="button">Inspect Playlist</a></p>
-    </div> -->
-    <div class="dropdown is-active">
-      <div class="dropdown-trigger">
-        <button class="button" 
-        onclick="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
-        onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
-        aria-haspopup="true" aria-controls="dropdown-menu" aria-haspopup="true" 
-        aria-controls="dropdown-menu">
-          <span>Comparison Selection 1</span>
-          <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </div>
-      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Acousticness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Danceability
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Energy
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Instrumentalness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Length
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Liveness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Loudness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Popularity
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Speechiness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Tempo
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Time Signature
-          </a>
+    <section class="hero is-primary is-success">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" target="_blank" href="https://www.spotify.com/us/">
+                            <img src="{{ url_for('static', filename='images/Spotify_Logo_RGB_Black.png') }}"
+                                 alt="Spotify Logo" style="width:100px;height:600px;">
+                        </a>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" target="_blank"
+                               href="https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=xKDqtJBVRrm8Llop7dvDNA">
+                                Data Analysis Jamz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </div>
-    </div>
-    <div class="dropdown is-active">
-      <div class="dropdown-trigger">
-        <button class="button" 
-        onclick="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
-        onblur="javascript:document.querySelector('.dropdown').classList.toggle('is-active')" 
-        aria-haspopup="true" aria-controls="dropdown-menu" aria-haspopup="true" 
-        aria-controls="dropdown-menu">
-          <span>Comparison Selection 2</span>
-          <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </div>
-      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Acousticness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Danceability
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Energy
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Instrumentalness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Length
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Liveness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Loudness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Popularity
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Speechiness
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Tempo
-          </a>
-          <a class="dropdown-item" onclick="javascript:alert('clicked')">
-            Time Signature
-          </a>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title">
+                    Spotify Playlist
+                </p>
+                <p class="subtitle">
+                    How does the music move you?
+                </p>
+                <p></p>
+                <button class="button is-black" href="/data" role="button">Inspect Playlist</button>
+            </div>
+            </p>
         </div>
-      </div>
-    </div>
-    
+
+        <div class="hero-foot">
+            <nav class="tabs">
+                <div class="container">
+                    <ul>
+                        <li><a class="navbar-item is-active">Overview</a></li>
+                        <li><a class="navbar-item">Playlist Analysis</a></li>
+                        <li><a class="navbar-item">Genres Analysis</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
     <div id="app" class="container-fluid">
         <section class="section">
-            <h1 class="title">Playlist Results</h1>
+            <h1 class="title has-text-centered">Playlist Results</h1>
             <div v-if="loading" class="container">
                 <spinner/>
             </div>
             <div v-else-if="error" class="container">
-                <error-message />
+                <error-message/>
             </div>
             <div v-else class="container-fluid">
                 <scatter :tracks="tracks" :x="x" :y="y"/>
             </div>
             <div class="field is-grouped">
                 <div class="control">
-                    <label for="xAxisSelect" class="label">X Axis</label>
+                    <label for="xAxisSelect" class="label">Comparison Selection 1</label>
                     <div class="select is-primary">
                         <select id="xAxisSelect" v-model="x">
                             <option v-for="axis in axes"
                                     :key="'x-' + axis"
                                     :value="axis"
-                                    :disabled="axis == y">{( toTitleCase(axis) )}</option>
+                                    :disabled="axis == y">{( toTitleCase(axis) )}
+                            </option>
                         </select>
                     </div>
                 </div>
                 <div class="control">
-                    <label for="yAxisSelect" class="label">Y Axis</label>
+                    <label for="yAxisSelect" class="label">Comparison Selection 2</label>
                     <div class="select is-primary">
                         <select id="yAxisSelect" v-model="y">
                             <option v-for="axis in axes"
                                     :key="'y-' + axis"
                                     :value="axis"
-                                    :disabled="axis == x">{( toTitleCase(axis) )}</option>
+                                    :disabled="axis == x">{( toTitleCase(axis) )}
+                            </option>
                         </select>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!--    <iframe src="https://open.spotify.com/embed/playlist/0fCFwL8LJE99raQb1g2YvF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-    <script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 
 </html>
