@@ -12,6 +12,7 @@ pymongo = "*"
 spotipy = "*"
 parse = "*"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 
