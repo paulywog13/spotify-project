@@ -1,112 +1,156 @@
 from dateutil.parser import parse as parse_date
 import pandas as pd
 import spotipy
-import spotipy as sp
+# import spotipy as sp
 import spotipy.util as util
 import requests
 from pprint import pprint
 import time
 
-#TODO Need to add in Spotify Credentials
+from config import user_id, client_id, client_secret, redirect_uri, playlist_id
 
 
-token = util.prompt_for_user_token(user_id,
-                                   'playlist-read-collaborative',
-                                   client_id,
-                                   client_secret,
-                                   redirect_uri)
-sp = spotipy.Spotify(auth=token)
+# TODO Need to add in Spotify Credentials
 
-#Read Playlist to pull data from Spotify API
-playlist = sp.user_playlist(user_id, playlist_id)
-tracks = playlist['tracks']['items']
-next_uri = playlist['tracks']['next']
-for _ in range(int(playlist['tracks']['total'] / playlist['tracks']['limit'])):
-    response = sp._get(next_uri)
-    tracks += response['items']
-    next_uri = response['next']
-
-tracks_df = pd.DataFrame([(track['track']['id'],
-                           track['track']['artists'][0]['name'],
-                           track['track']['name'],
-                           track['track']['artists'][0]['id'],
-                           track['added_by']['id'],
-                           parse_date(track['track']['album']['release_date']) if track['track']['album']['release_date'] else None,
-                           parse_date(track['added_at']))
-                          for track in playlist['tracks']['items']],
-                         columns=['id', 'artist', 'name', 'artist_id','user_id', 'release_date', 'added_at'])
+def spotipy_connect():
+    token = util.prompt_for_user_token(user_id,
+                                       'playlist-read-collaborative',
+                                       client_id,
+                                       client_secret,
+                                       redirect_uri)
+    return spotipy.Spotify(auth=token)
 
 
-#Artist ID
+# Read Playlist to pull data from Spotify API
+def get_playlist():
+    sp = spotipy_connect()
+    return sp.user_playlist(user_id, playlist_id)
 
-artist_id = tracks_df['artist_id']
-artist_id = artist_id.unique()
 
-#User ID
+def get_tracks(playlist):
+    sp = spotipy_connect()
+    tracks = playlist['tracks']['items']
+    next_uri = playlist['tracks']['next']
+    for _ in range(int(playlist['tracks']['total'] / playlist['tracks']['limit'])):
+        response = sp._get(next_uri)
+        tracks += response['items']
+        next_uri = response['next']
 
-user_id = tracks_df['user_id'].unique()
-user_id.tolist()
+    tracks_df = pd.DataFrame([(track['track']['id'],
+                               track['track']['artists'][0]['name'],
+                               track['track']['name'],
+                               track['track']['artists'][0]['id'],
+                               track['added_by']['id'],
+                               parse_date(track['track']['album']['release_date']) if track['track']['album'][
+                                   'release_date'] else None,
+                               parse_date(track['added_at']))
+                              for track in playlist['tracks']['items']],
+                             columns=['id', 'artist', 'name', 'artist_id', 'user_id', 'release_date', 'added_at'])
 
-#User Song ID
+    # Artist ID
+    #
+    # artist_id = tracks_df['artist_id']
+    # artist_id = artist_id.unique()
 
-user_song_ids = pd.DataFrame(tracks_df, columns= ['id', 'user_id'])
-user_song_ids
+    # User ID
 
-#User Artist ID
+    user_id = tracks_df['user_id'].unique()
+    user_id.tolist()
 
-user_artist_id = pd.DataFrame(tracks_df, columns= ['artist_id', 'user_id'])
-user_artist_id
+    # User Song ID
 
-#Put Track IDs into a list for Audio Features Loop
+    user_song_ids = pd.DataFrame(tracks_df, columns=['id', 'user_id'])
+    user_song_ids
 
-song_id_list = tracks_df["id"].tolist()
-pprint(song_id_list)
+    # User Artist ID
 
-# Get Track Features
+    user_artist_id = pd.DataFrame(tracks_df, columns=['artist_id', 'user_id'])
+    user_artist_id
 
-def getTrackFeatures(id):
-    meta = sp.track(id)
-    features = sp.audio_features(id)
+    # Put Track IDs into a list for Audio Features Loop
 
-# meta
-    name = meta['name']
-    album = meta['album']['name']
-    artist = meta['album']['artists'][0]['name']
-    release_date = meta['album']['release_date']
-    length = meta['duration_ms']
-    popularity = meta['popularity']
+    song_id_list = tracks_df["id"].tolist()
 
-# features
-    acousticness = features[0]['acousticness']
-    danceability = features[0]['danceability']
-    energy = features[0]['energy']
-    instrumentalness = features[0]['instrumentalness']
-    liveness = features[0]['liveness']
-    loudness = features[0]['loudness']
-    speechiness = features[0]['speechiness']
-    tempo = features[0]['tempo']
-    time_signature = features[0]['time_signature']
+    # pprint(song_id_list)
 
-    track = [id, name, album, artist, release_date, length, popularity, danceability, acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo, time_signature]
-    return track
+    # Get Track Features
 
-# loop over track ids 
-tracks = []
-for i in range(len(song_id_list)):
-    time.sleep(.1)
-    track = getTrackFeatures(song_id_list[i])
-    tracks.append(track)
+    def getTrackFeatures(id):
+        meta = sp.track(id)
+        features = sp.audio_features(id)
 
-pprint(tracks)
+        # meta
+        name = meta['name']
+        album = meta['album']['name']
+        artist = meta['album']['artists'][0]['name']
+        release_date = meta['album']['release_date']
+        length = meta['duration_ms']
+        popularity = meta['popularity']
 
-# create dataset
-song_data = pd.DataFrame(tracks, columns = ['id','name', 'album', 'artist', 'release_date', 'length', 'popularity', 'danceability', 'acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo', 'time_signature'])
+        # features
+        acousticness = features[0]['acousticness']
+        danceability = features[0]['danceability']
+        energy = features[0]['energy']
+        instrumentalness = features[0]['instrumentalness']
+        liveness = features[0]['liveness']
+        loudness = features[0]['loudness']
+        speechiness = features[0]['speechiness']
+        tempo = features[0]['tempo']
+        time_signature = features[0]['time_signature']
 
-#Merge data
+        track = [id, name, album, artist, release_date, length, popularity, danceability, acousticness,
+                 energy, instrumentalness, liveness, loudness, speechiness, tempo, time_signature]
+        return track
 
-final = pd.merge(song_data, user_song_ids, how = 'left', on = 'id')
-final =pd.DataFrame(final)
+    # loop over track ids
+    tracks = []
+    for i in range(len(song_id_list)):
+        time.sleep(.1)
+        track = getTrackFeatures(song_id_list[i])
+        tracks.append(track)
 
-final = pd.merge(final, genre_df, how = 'left', left_on = 'artist', right_on = 'artist')
+    pprint(tracks)
 
-final.to_csv("user_song_info.csv", sep = ',')
+    # create dataset
+    song_data = pd.DataFrame(tracks, columns=['id', 'name', 'album', 'artist', 'release_date', 'length', 'popularity',
+                                              'danceability', 'acousticness', 'energy',
+                                              'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo',
+                                              'time_signature'])
+
+    # Merge data
+
+    final = pd.merge(song_data, user_song_ids, how='left', on='id')
+    final = pd.DataFrame(final)
+
+    tracks_list = []
+
+    for index, row in final.iterrows():
+        track = {
+            'info': {
+                'name': row['name'],
+                'album': row['album'],
+                'artist': row['artist'],
+                'user_id': row['user_id']
+            },
+            'features': {
+                'length': row['length'],
+                'popularity': row['popularity'],
+                'danceability': row['danceability'],
+                'acousticness': row['acousticness'],
+                'danceability': row['danceability'],
+                'energy': row['energy'],
+                'instrumentalness': row['instrumentalness'],
+                'liveness': row['liveness'],
+                'loudness': row['loudness'],
+                'speechiness': row['speechiness'],
+                'tempo': row['tempo'],
+                'time_signature': row['time_signature'],
+            }
+        }
+        tracks_list.append(track)
+
+    return tracks_list
+
+    # final = pd.merge(final, genre_df, how = 'left', left_on = 'artist', right_on = 'artist')
+
+# final.to_csv("user_song_info.csv", sep = ',')

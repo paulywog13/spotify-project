@@ -10,6 +10,7 @@ const app = new Vue({
         x: 'tempo',
         y: 'danceability',
         tracks: [],
+        active: 'overview',
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
         users: [
@@ -29,12 +30,16 @@ const app = new Vue({
                 .map(word => word.charAt(0).toUpperCase() + word.substr(1))
                 .join(' ');
         },
+        isActive: function (me) {
+
+        }
     },
     created: function () {
         d3.json('http://127.0.0.1:5000/data')
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
+                console.log(data)
             })
             .catch(err => {
                 this.error = err;
