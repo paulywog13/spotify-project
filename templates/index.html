@@ -8,8 +8,10 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.scss.css') }}"/>
-</head>
+    <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+  </head>
 <body>
+  <div id="app">
     <section class="hero is-primary is-success">
         <div class="hero-head">
             <nav class="navbar">
@@ -23,7 +25,7 @@
                     <div id="navbarlink" class="navbar-menu"> 
                       <div class="navbar-end">
                         <a class="navbar-item is-active" target="_blank" href="https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=xKDqtJBVRrm8Llop7dvDNA">
-                          <b>Data Analysis Jamz Playlist</b>
+                          <b style="color:black">Data Analysis Jamz Playlist</b>
                         </a>
                       </div>
                     </div>
@@ -48,43 +50,56 @@
             <nav class="tabs">
                 <div class="container">
                     <ul>
-                        <li><a class="navbar-item is-active">Overview</a></li>
-                        <li><a class="navbar-item">Playlist Results</a></li>
+                        <li><a @click="active = 'overview'" class="navbar-item"> <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                          <span>Overview</span></a></li>
+                        <li><a @click="active = 'playlist'" class="navbar-item"><span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+                          <span>Playlist Results</span></a></li>
                         <!-- <li><a class="navbar-item">Genres Analysis</a></li> -->
                     </ul>
                 </div>
             </nav>
         </div>
     </section>
-  <div id="overview" class="tab active">
-      <h3>Overview</h3>
-        <p>Length = The duration of the track in milliseconds.</p>
-        <p>Popularity = The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. 
+  <div v-if="active == 'overview'" class="container is-max-widescreen">    
+    <h1 class="title has-text-centered"><b>Overview</b></h1>
+        <br>
+        <p><b>Length</b> = The duration of the track in milliseconds.</p>
+        <br>
+        <p><b>Popularity</b> = The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. 
           The artist’s popularity is calculated from the popularity of all the artist’s tracks.</p>
-        <p>Acousticness = A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 
+          <br>
+        <p><b>Acousticness</b> = A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 
           1.0 represents high confidence the track is acoustic.</p>
-        <p>Danceability = Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. 
+          <br>
+        <p><b>Danceability</b> = Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. 
           A value of 0.0 is least danceable and 1.0 is most danceable.</p>
-        <p>Energy = Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. 
+          <br>
+        <p><b>Energy</b> = Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. 
           For example, death metal has high energy, while a Bach prelude scores low on the scale. 
           Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</p>
-        <p>Instrumentalness = Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. 
+          <br>
+        <p><b>Instrumentalness</b> = Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. 
           Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. 
           Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</p>
-        <p>Liveness = Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. 
+          <br>
+        <p><b>Liveness</b> = Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. 
           A value above 0.8 provides strong likelihood that the track is live.</p>
-        <p>Loudness = The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. 
+          <br>
+        <p><b>Loudness</b> = The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. 
           Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</p>
-        <p>Speechiness = Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. 
+          <br>
+        <p><b>Speechiness</b> = Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. 
           Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech,
           either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</p>
-        <p>Tempo = The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</p>
-        <p>Time Signature = An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).</p>
-
-  <div id="results_tab" class="tab active"> 
-    <div id="app" class="container-fluid">
+          <br>
+        <p><b>Tempo</b> = The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</p>
+        <br>
+        <p><b>Time Signature</b> = An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).</p>
+        <br>
+    </div>     
+    <div v-if="active == 'playlist'" class="container-fluid">
         <section class="section">
-            <h1 class="title has-text-centered">Playlist Results</h1>
+            <h1 class="title has-text-centered"><b>Playlist Results</b></h1>
             <div v-if="loading" class="container">
                 <spinner/>
             </div>
@@ -122,6 +137,8 @@
             </div>
         </section>
     </div>
+  </div>
+  
 <!--    <iframe src="https://open.spotify.com/embed/playlist/0fCFwL8LJE99raQb1g2YvF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>-->
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
