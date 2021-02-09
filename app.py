@@ -1,14 +1,13 @@
 from flask import Flask, request, render_template, json
 from sassutils.wsgi import SassMiddleware
 from pymongo import MongoClient
-import dns
+import os
 from bson.json_util import dumps
-from config import MONGODB_URI
 from spotify.playlist import get_playlist, get_tracks
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-mdb_connect_string = MONGODB_URI
+mdb_connect_string = os.environ['MONGODB_URI']
 
 app.wsgi_app = SassMiddleware(app.wsgi_app, {
     'app': ('static/scss', 'static/css', '/static/css')

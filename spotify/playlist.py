@@ -1,13 +1,15 @@
 from dateutil.parser import parse as parse_date
 import pandas as pd
 import spotipy
-# import spotipy as sp
 import spotipy.util as util
-import requests
-from pprint import pprint
 import time
+import os
 
-from config import user_id, client_id, client_secret, redirect_uri, playlist_id
+user_id = os.environ['USER_ID']
+client_id = os.environ['CLIENT_ID']
+client_secret = os.environ['CLIENT_SECRET']
+redirect_uri = os.environ['REDIRECT_URI']
+playlist_id = os.environ['PLAYLIST_ID']
 
 
 # TODO Need to add in Spotify Credentials
@@ -47,33 +49,8 @@ def get_tracks(playlist):
                               for track in playlist['tracks']['items']],
                              columns=['id', 'artist', 'name', 'artist_id', 'user_id', 'release_date', 'added_at'])
 
-    # Artist ID
-    #
-    # artist_id = tracks_df['artist_id']
-    # artist_id = artist_id.unique()
-
-    # User ID
-
-    user_id = tracks_df['user_id'].unique()
-    user_id.tolist()
-
-    # User Song ID
-
     user_song_ids = pd.DataFrame(tracks_df, columns=['id', 'user_id'])
-    user_song_ids
-
-    # User Artist ID
-
-    user_artist_id = pd.DataFrame(tracks_df, columns=['artist_id', 'user_id'])
-    user_artist_id
-
-    # Put Track IDs into a list for Audio Features Loop
-
     song_id_list = tracks_df["id"].tolist()
-
-    # pprint(song_id_list)
-
-    # Get Track Features
 
     def getTrackFeatures(id):
         meta = sp.track(id)
@@ -108,8 +85,6 @@ def get_tracks(playlist):
         time.sleep(.1)
         track = getTrackFeatures(song_id_list[i])
         tracks.append(track)
-
-    pprint(tracks)
 
     # create dataset
     song_data = pd.DataFrame(tracks, columns=['id', 'name', 'album', 'artist', 'release_date', 'length', 'popularity',
@@ -150,7 +125,3 @@ def get_tracks(playlist):
         tracks_list.append(track)
 
     return tracks_list
-
-    # final = pd.merge(final, genre_df, how = 'left', left_on = 'artist', right_on = 'artist')
-
-# final.to_csv("user_song_info.csv", sep = ',')
