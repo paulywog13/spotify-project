@@ -65,11 +65,12 @@ const Scatter = Vue.component('scatter', {
             const toolTip = d3.tip()
                 .offset([80, -60])
                 .html((d) => {
+                    const user = this.users.find(user => user.id === d.info.user_id)
                     // let style = `{background-color: ${this.users[d.user_id]};}`
-                    return `<div class="box has-text-light has-background-danger-dark has-text-centered" >
-                                <h5>Artist: ${d.artist}</h5>
-                                <h6>Track: ${d.name}</h6>
-                                <p>Added by ${d.user_id}</p>
+                    return `<div class="box has-text-light has-text-centered" style="background-color:${user.color}">
+                                <h5>Artist: ${d.info.artist}</h5>
+                                <h6>Track: ${d.info.name}</h6>
+                                <p>Added by ${user.name}</p>
                             </div>`
                 });
             circlesGroup
@@ -79,7 +80,7 @@ const Scatter = Vue.component('scatter', {
                     toolTip.show(data, this)
                 })
                 .on('mouseout', function (data) {
-                    toolTip.hide(data)
+                    toolTip.hide(data, this)
                 });
         },
         updateAll: function (axis) {
