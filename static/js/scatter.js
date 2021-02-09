@@ -47,8 +47,8 @@ const Scatter = Vue.component('scatter', {
         linearScale: function (axis, data) {
             const offset = axis === 'x' ? 0.05 : 0.2;
             return d3.scaleLinear()
-                .domain([d3.min(data, d => d[this[axis]]) * (1 - offset),
-                    d3.max(data, d => d[this[axis]]) * (1 + offset)])
+                .domain([d3.min(data, d => d.features[this[axis]]) * (1 - offset),
+                    d3.max(data, d => d.features[this[axis]]) * (1 + offset)])
                 .range(axis === 'x' ? [0, this.params.iWidth] : [this.params.iHeight, 0]);
         },
         renderAxis: function (axis, axisObj, scale) {
@@ -59,7 +59,7 @@ const Scatter = Vue.component('scatter', {
         renderCircles: function (circlesGroup, scale, axis) {
             circlesGroup.transition()
                 .duration(500)
-                .attr(`c${axis}`, d => scale(d[this[axis]]));
+                .attr(`c${axis}`, d => scale(d.features[this[axis]]));
         },
         updateToolTip: function (circlesGroup) {
             const toolTip = d3.tip()
@@ -118,9 +118,9 @@ const Scatter = Vue.component('scatter', {
             .data(this.tracks)
             .enter()
             .append('circle')
-            .attr('cx', d => xScale(d[this.x]))
-            .attr('cy', d => yScale(d[this.y]))
-            .attr('fill', d => this.users.find(user => user.id === d.user_id).color)
+            .attr('cx', d => xScale(d.features[this.x]))
+            .attr('cy', d => yScale(d.features[this.y]))
+            .attr('fill', d => this.users.find(user => user.id === d.info.user_id).color)
             .attr('stroke', 'lightgrey')
             .attr('opacity', 0.8)
             .attr('r', 8);

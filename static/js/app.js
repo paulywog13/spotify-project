@@ -34,12 +34,20 @@ const app = new Vue({
 
         }
     },
+    computed: {
+        colorCodes: function () {
+            const colors = ['#92DCE5', '#D64933', '#7D70BA', '#f1d302', '#ace4aa', '#f84aa7'];
+            const colorCodes = {};
+            this.users.forEach((user, index) => colorCodes[user] = colors[index]);
+            console.log(colorCodes)
+            return colorCodes;
+        }
+    },
     created: function () {
         d3.json('http://127.0.0.1:5000/data')
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
-                console.log(data)
             })
             .catch(err => {
                 this.error = err;

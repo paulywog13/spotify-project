@@ -8,11 +8,12 @@ flask = "*"
 libsass = "*"
 pandas = "*"
 numpy = "*"
-pymongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
 spotipy = "*"
 parse = "*"
 requests = "*"
 gunicorn = "*"
+dnspython = "*"
 
 [dev-packages]
 

@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, json
 from sassutils.wsgi import SassMiddleware
 from pymongo import MongoClient
+import dns
 from bson.json_util import dumps
 from config import MONGODB_URI
 from spotify.playlist import get_playlist, get_tracks
@@ -22,17 +23,15 @@ def home():
 @app.route("/data", methods=['GET'])
 def get_data():
     try:
-        # connection = MongoClient(mdb_connect_string)  # equal to > show dbs
-        # db = connection.spotify
-        # mdb_playlist = db.playlists.find_one()
+        connection = MongoClient(mdb_connect_string)  # equal to > show dbs
+        db = connection.spotify
+        mdb_playlist = db.playlists.find_one()
         sp_playlist = get_playlist()
-        # if mdb_playlist['snapshot_id'] != sp_playlist['snapshot_id']:
-        #     db.tracks.update({}, sp_playlist, upsert=True)
-        #     db.tracks.drop()
-        #     db.createCollection('tracks')
-        #     db.tracks.insert_many(get_tracks(sp_playlist))
-        # return dumps([track for track in get_tracks(sp_playlist)])
-        return {'msg': 'hello world'}
+        if mdb_playlist['snapshot_id'] != sp_playlist['snapshot_id']:
+            db.playlists.update({}, sp_playlist, upsert=True)
+            db.tracks.drop()
+            db.tracks.insert_many(get_tracks(sp_playlist))
+        return dumps([track for track in db.tracks.find()])
     except:
         return {'msg': 'hello world'}
     #     exit("Error: Unable to connect to the database")
