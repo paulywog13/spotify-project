@@ -41,7 +41,7 @@ const app = new Vue({
         }
     },
     created: function () {
-        d3.json('http://127.0.0.1:5000/data')
+        d3.json('/data')
             .then(data => {
                 this.tracks = data;
                 this.loading = false;
