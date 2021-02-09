@@ -130,8 +130,14 @@ const Scatter = Vue.component('scatter', {
 });
 
 const Spinner = Vue.component('spinner', {
-    template: `<div>
-                    <h2 class="loading">Loading...</h2>
+    template: `<div class='sp-container'>
+                  <div class='loader-container'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>`
 });
 

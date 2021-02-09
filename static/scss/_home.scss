@@ -1,3 +1,62 @@
-h1 {
-  color: blue;
+.sp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+//
+//svg {
+//  display: none;
+//}
+
+.loader-container {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  filter: url(#gooey);
+}
+
+.loader-container > * {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  background: #1EE4F2;
+  top: 25%;
+  border-radius: 50%;
+  animation: loading 4s infinite;
+  transform: scale(.1);
+  opacity: 0;
+
+  &:nth-child(1) {
+    animation-delay: .5s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 2s;
+  }
+}
+
+@keyframes loading {
+  50% {
+    transform: scale(1.25);
+    left: 50%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(.1);
+    left: 100%;
+    opacity: 0;
+  }
 }

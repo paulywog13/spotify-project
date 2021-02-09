@@ -10,7 +10,8 @@ const app = new Vue({
         x: 'tempo',
         y: 'danceability',
         tracks: [],
-        active: 'overview',
+        playlistActive: true,
+        overviewActive: false,
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
         users: [
@@ -30,8 +31,9 @@ const app = new Vue({
                 .map(word => word.charAt(0).toUpperCase() + word.substr(1))
                 .join(' ');
         },
-        isActive: function (me) {
-
+        changeActive: function (me) {
+            this.playlistActive = me === 'playlist';
+            this.overviewActive = me === 'overview';
         }
     },
     computed: {

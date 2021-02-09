@@ -50,17 +50,29 @@
             <nav class="tabs">
                 <div class="container">
                     <ul>
-                        <li><a @click="active = 'overview'" class="navbar-item"> <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
-                          <span>Overview</span></a></li>
-                        <li><a @click="active = 'playlist'" class="navbar-item"><span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
-                          <span>Playlist Results</span></a></li>
+                        <li>
+                            <a @click="changeActive('playlist')" class="navbar-item" :class="{'is-active': playlistActive}">
+                                <span class="icon is-small">
+                                    <i class="fas fa-music" aria-hidden="true"></i>
+                                </span>
+                                <span>Playlist Results</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="changeActive('overview')" class="navbar-item" :class="{'is-active': overviewActive}">
+                                <span class="icon is-small">
+                                    <i class="far fa-file-alt" aria-hidden="true"></i>
+                                </span>
+                                <span>Overview</span>
+                            </a>
+                        </li>
                         <!-- <li><a class="navbar-item">Genres Analysis</a></li> -->
                     </ul>
                 </div>
             </nav>
         </div>
     </section>
-  <div v-if="active == 'overview'" class="container is-max-widescreen">    
+  <div v-if="overviewActive" class="container is-max-widescreen">
     <h1 class="title has-text-centered"><b>Overview</b></h1>
         <br>
         <p><b>Length</b> = The duration of the track in milliseconds.</p>
@@ -97,7 +109,7 @@
         <p><b>Time Signature</b> = An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).</p>
         <br>
     </div>     
-    <div v-if="active == 'playlist'" class="container-fluid">
+    <div v-if="playlistActive" class="container-fluid">
         <section class="section">
             <h1 class="title has-text-centered"><b>Playlist Results</b></h1>
             <div v-if="loading" class="container">
