@@ -15,15 +15,20 @@ const app = new Vue({
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
         users: [
-            {id: '1221063701', name: 'Charles Stephens', color: '#92DCE5', active: true},
-            {id: '1213961138', name: 'Tempest Campbell', color: '#D64933', active: true},
-            {id: 'kukulski.2', name: 'Matt Kukulski', color: '#7D70BA', active: true},
-            {id: '1256631666', name: 'Stu Yates', color: '#f1d302', active: true},
-            {id: '1239315253', name: 'John Edward Shuford', color: '#ace4aa', active: true},
-            {id: '5x3jsdd20gyv86pg2naw63zwp', name: 'Pauly Richmeier', color: '#f84aa7', active: true}
+            {id: '1221063701', name: 'Charles Stephens', color: '#92DCE5', selected: true},
+            {id: '1213961138', name: 'Tempest Campbell', color: '#D64933', selected: true},
+            {id: 'kukulski.2', name: 'Matt Kukulski', color: '#7D70BA', selected: true},
+            {id: '1256631666', name: 'Stu Yates', color: '#f1d302', selected: true},
+            {id: '1239315253', name: 'John Edward Shuford', color: '#ace4aa', selected: true},
+            {id: '5x3jsdd20gyv86pg2naw63zwp', name: 'Pauly Richmeier', color: '#f84aa7', selected: true}
         ],
         loading: true,
         error: null,
+    },
+    computed: {
+        selectedUsers: function () {
+            return this.users.filter(user => user.selected);
+        }
     },
     methods: {
         toTitleCase: function (string) {
@@ -37,7 +42,7 @@ const app = new Vue({
         },
         toggleUser: function (id) {
             const userIndex = this.users.indexOf(user => user.id === id);
-            this.users[userIndex].active = !this.users[userIndex].active;
+            this.users[userIndex].selected = !this.users[userIndex].selected;
         }
     },
     created: function () {
@@ -52,3 +57,4 @@ const app = new Vue({
             });
     }
 });
+

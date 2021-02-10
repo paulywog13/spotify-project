@@ -22,7 +22,7 @@ def home():
 @app.route("/data", methods=['GET'])
 def get_data():
     try:
-        connection = MongoClient(mdb_connect_string)  # equal to > show dbs
+        connection = MongoClient(mdb_connect_string)
         db = connection.spotify
         mdb_playlist = db.playlists.find_one()
         sp_playlist = get_playlist()
@@ -32,8 +32,7 @@ def get_data():
             db.tracks.insert_many(get_tracks(sp_playlist))
         return dumps([track for track in db.tracks.find()])
     except:
-        return {'msg': 'hello world'}
-    #     exit("Error: Unable to connect to the database")
+        exit("Error: Unable to connect to the database")
 
 
 if __name__ == "__main__":
