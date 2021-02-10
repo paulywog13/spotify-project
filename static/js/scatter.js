@@ -111,8 +111,10 @@ const Scatter = Vue.component('scatter', {
             this.updateAll('y');
         },
         'selectedUsers' () {
-            this.updateAll('x');
-            this.updateAll('y');
+            if (this.selectedUsers.length) {
+                this.updateAll('x');
+                this.updateAll('y');
+            }
         }
     },
     mounted: function () {
