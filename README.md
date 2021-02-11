@@ -13,8 +13,10 @@ Datasets to be used were collected using Spotify’s collaborative playlist func
 Playlist: “Data Analysis Jamz" - https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=riMLWeEsTeqfAreToKI5_g
 
 **Data Extraction using Python Library – Spotipy**
-Data was extracted using Python and Spotify’s Python library: Spotipy.  A series of successive API calls were used to pull data from Spotify.  To extract information using Spotipy, Spotify requires that a developer application be setup.  Once setup, the app will issue a Client ID and a Secret Client ID.  Similarly, a redirect URI is required to “bounce” a unique user token to be used with the API calls.  A unique playlist and user ID was required to extract the playlist and audio track information.    
-JavaScript Libraries
+
+Data was extracted using Python and Spotify’s Python library: Spotipy.  A series of successive API calls were used to pull data from Spotify.  To extract information using Spotipy, Spotify requires that a developer application be setup.  Once setup, the app will issue a Client ID and a Secret Client ID.  Similarly, a redirect URI is required to “bounce” a unique user token to be used with the API calls.  A unique playlist and user ID was required to extract the playlist and audio track information.  
+
+**JavaScript Libraries**
 We chose to use a Bulma page format of our project’s main page due to the variety 
 of option and styles available. The page format we chose was the Bulma Hero as 
 the banner container allowed us to include links for both Spotify and the playlist 
