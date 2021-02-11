@@ -158,7 +158,7 @@
             <ul class="columns is-centered">
                 <li v-for="user in users" :key="user.id" class="column is-narrow">
                     <label class="checkbox">
-                        <input type="checkbox" v-model="user.active">
+                        <input type="checkbox" class="user-checkbox" :data-user="user.id" v-model="user.selected">
                         {( user.name )}
                     </label>
                 </li>
@@ -172,7 +172,7 @@
                     <error-message/>
                 </div>
                 <div v-else class="column">
-                    <scatter :tracks="tracks" :x="x" :y="y" :users="users"/>
+                    <scatter :tracks="tracks" :x="x" :y="y" :users="selectedUsers"/>
                 </div>
             </div>
         </section>

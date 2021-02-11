@@ -42,6 +42,12 @@ const Scatter = Vue.component('scatter', {
                 mBottom: window.innerHeight * 0.1,
             }
         },
+        selectedUsers: function () {
+            return this.users.filter(user => user.selected);
+        },
+        selectedTracks: function () {
+            return this.tracks.filter(track => this.selectedUsers.find(user => user.id === track.info.user_id))
+        }
     },
     methods: {
         linearScale: function (axis, data) {
@@ -59,19 +65,20 @@ const Scatter = Vue.component('scatter', {
         renderCircles: function (circlesGroup, scale, axis) {
             circlesGroup.transition()
                 .duration(500)
-                .attr(`c${axis}`, d => scale(d.features[this[axis]]));
+                .attr(`c${axis}`, d => scale(d.features[this[axis]]))
+                .attr('opacity', d => this.selectedUsers.find(user => user.id === d.info.user_id) ? 0.8 : 0);
         },
         updateToolTip: function (circlesGroup) {
             const toolTip = d3.tip()
                 .offset([80, -60])
                 .html((d) => {
-                    const user = this.users.find(user => user.id === d.info.user_id)
+                    const user = this.selectedUsers.find(user => user.id === d.info.user_id) || null;
                     // let style = `{background-color: ${this.users[d.user_id]};}`
-                    return `<div class="box has-text-light has-text-centered" style="background-color:${user.color}">
+                    return user ? `<div class="box has-text-light has-text-centered" style="background-color:${user.color}">
                                 <h5>Artist: ${d.info.artist}</h5>
                                 <h6>Track: ${d.info.name}</h6>
                                 <p>Added by ${user.name}</p>
-                            </div>`
+                            </div>` : ``
                 });
             circlesGroup
                 .call(toolTip);
@@ -84,7 +91,7 @@ const Scatter = Vue.component('scatter', {
                 });
         },
         updateAll: function (axis) {
-            const axisScale = this.linearScale(axis, this.tracks);
+            const axisScale = this.linearScale(axis, this.selectedTracks);
             const axisAxis = d3.select(`.${axis}-axis`);
             this.renderAxis(axis, axisAxis, axisScale);
             this.renderCircles(circlesGroup, axisScale, axis);
@@ -102,18 +109,26 @@ const Scatter = Vue.component('scatter', {
         },
         'y' () {
             this.updateAll('y');
+        },
+        'selectedUsers' () {
+            if (this.selectedUsers.length) {
+                this.updateAll('x');
+                this.updateAll('y');
+            }
         }
     },
     mounted: function () {
         const chartGroup = d3.select('.chart-group');
 
-        const xScale = this.linearScale('x', this.tracks);
-        const yScale = this.linearScale('y', this.tracks);
+        const xScale = this.linearScale('x', this.selectedTracks);
+        const yScale = this.linearScale('y', this.selectedTracks);
 
         const xAxis = d3.select('.x-axis')
             .call(d3.axisBottom(xScale));
         const yAxis = d3.select('.y-axis')
             .call(d3.axisLeft(yScale));
+
+        const userChange = new CustomEvent('user-checked');
 
         circlesGroup = chartGroup.selectAll('circle')
             .data(this.tracks)
@@ -125,8 +140,6 @@ const Scatter = Vue.component('scatter', {
             .attr('stroke', 'lightgrey')
             .attr('opacity', 0.8)
             .attr('r', 8);
-
-        this.updateToolTip(circlesGroup);
     }
 });
 
