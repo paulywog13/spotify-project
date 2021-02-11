@@ -1,6 +1,5 @@
-# spotify-project
-
 **Introduction:** 
+
 Plotify!  The project will use data collected from a collaborative playlist dataset created by the Fall/Winter 2020-21 Data Visualization Bootcamp cohort.  The aim of the project is to answer several music related questions from the dataset used.  The research findings are mostly for fun, may also be extrapolated to market research or continued work on a music application.  Initial research questions posed are:  
 
 1.	What is the danceability distribution of songs in the playlist? 
@@ -18,8 +17,10 @@ Playlist: “Data Analysis Jamz" - https://open.spotify.com/playlist/0fCFwL8LJE9
 Data was extracted using Python and Spotify’s Python library: Spotipy.  A series of successive API calls were used to pull data from Spotify.  To extract information using Spotipy, Spotify requires that a developer application be setup.  Once setup, the app will issue a Client ID and a Secret Client ID.  Similarly, a redirect URI is required to “bounce” a unique user token to be used with the API calls.  A unique playlist and user ID was required to extract the playlist and audio track information.  
 
 ![image](https://github.com/paulywog13/spotify-project/blob/main/1.png)
+![image](https://github.com/paulywog13/spotify-project/blob/main/2.png)
 
 **JavaScript Libraries**
+
 We chose to use a Bulma page format of our project’s main page due to the variety 
 of option and styles available. The page format we chose was the Bulma Hero as 
 the banner container allowed us to include links for both Spotify and the playlist 
