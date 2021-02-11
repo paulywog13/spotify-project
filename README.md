@@ -10,6 +10,7 @@ Plotify!  The project will use data collected from a collaborative playlist data
 5.	What is the tempo distribution of songs in the playlist?  
 
 Datasets to be used were collected using Spotify’s collaborative playlist function:
+
 Playlist: “Data Analysis Jamz" - https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=riMLWeEsTeqfAreToKI5_g
 
 **Data Extraction using Python Library – Spotipy**
