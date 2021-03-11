@@ -1,8 +1,13 @@
+.sp-content {
+  background-image: url("/static/images/headphones.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 120vh; }
+
 .sp-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   flex-direction: row;
   flex-wrap: wrap; }
 

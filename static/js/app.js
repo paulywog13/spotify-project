@@ -10,8 +10,14 @@ const app = new Vue({
         x: 'tempo',
         y: 'danceability',
         tracks: [],
+        user: '1221063701',
+        track: null,
         playlistActive: true,
         overviewActive: false,
+        predictorActive: false,
+        recommendationsActive: false,
+        genreActive: false,
+        submissionError: null,
         axes: ['acousticness', 'danceability', 'energy', 'instrumentalness', 'length',
             'liveness', 'loudness', 'popularity', 'speechiness', 'tempo', 'time_signature'],
         users: [
@@ -28,6 +34,9 @@ const app = new Vue({
     computed: {
         selectedUsers: function () {
             return this.users.filter(user => user.selected);
+        },
+        userTracks: function () {
+            return this.tracks.filter(track => track.info.user_id === this.user)
         }
     },
     methods: {
@@ -39,10 +48,18 @@ const app = new Vue({
         changeActive: function (me) {
             this.playlistActive = me === 'playlist';
             this.overviewActive = me === 'overview';
+            this.predictorActive = me === 'predictor';
+            this.recommendationsActive = me === 'recommendations';
+            this.genreActive = me === 'genre';
         },
         toggleUser: function (id) {
             const userIndex = this.users.indexOf(user => user.id === id);
             this.users[userIndex].selected = !this.users[userIndex].selected;
+        },
+        getRecommendations: function () {
+            fetch('/recommend?track_id=' + this.track)
+                .then(res => console.log(res))
+                .catch(err => this.submissionError = err)
         }
     },
     created: function () {

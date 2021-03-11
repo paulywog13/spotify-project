@@ -30,9 +30,35 @@ def get_data():
             db.playlists.update({}, sp_playlist, upsert=True)
             db.tracks.drop()
             db.tracks.insert_many(get_tracks(sp_playlist))
-        return dumps([track for track in db.tracks.find()])
+        tracks = dumps([track for track in db.tracks.find()])
+        return tracks
     except:
         exit("Error: Unable to connect to the database")
+
+
+@app.route("/recommend", methods=['GET'])
+def get_recommendations():
+    track_id = request.args['track_id']
+    print(track_id)
+    return 'track_id: ' + track_id
+
+
+@app.route("/genre-predict", methods=['GET'])
+def get_genre_prediction():
+    track = request.args['track']
+    artist = request.args['artist']
+    # hit spotify API search route
+    print(f'q=artist:{artist}%20track:{track}&type=track')
+    # gets the first track returned from search query
+    # get the album from the track id, get its list of genres
+    # get the audio features from the track id
+    # run audio features through the machine learning model
+    # 
+    # return json object with:
+        # predicted genre
+        # actual genre list
+        # track info
+    return 'hi'
 
 
 if __name__ == "__main__":

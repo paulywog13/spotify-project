@@ -105,7 +105,8 @@ def get_tracks(playlist):
                 'name': row['name'],
                 'album': row['album'],
                 'artist': row['artist'],
-                'user_id': row['user_id']
+                'user_id': row['user_id'],
+                'track_id': row['id']
             },
             'features': {
                 'length': row['length'],
