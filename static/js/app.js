@@ -10,6 +10,7 @@ const app = new Vue({
         x: 'tempo',
         y: 'danceability',
         tracks: [],
+        recTracks: [],
         user: '1221063701',
         track: null,
         playlistActive: true,
@@ -57,8 +58,9 @@ const app = new Vue({
             this.users[userIndex].selected = !this.users[userIndex].selected;
         },
         getRecommendations: function () {
-            fetch('/recommend?track_id=' + this.track)
-                .then(res => console.log(res))
+            d3.json('/recommend?track_id=' + this.track)
+                .then(data => console.log(data))
+                .then(data => this.recTracks = data)
                 .catch(err => this.submissionError = err)
         }
     },
