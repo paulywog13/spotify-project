@@ -39,8 +39,18 @@ def get_data():
 @app.route("/recommend", methods=['GET'])
 def get_recommendations():
     track_id = request.args['track_id']
-    print(track_id)
-    return 'track_id: ' + track_id
+    try:
+        connection = MongoClient(mdb_connect_string)
+        db = connection.spotify
+        rec_tracks = dumps([track for track in db.recommended.find(
+                { 'info.orig_track_id': { '$regex': '.*' + track_id[:-1] + '.*'} }
+            )])
+        if (len(rec_tracks) == 0):
+            return dumps({'err': 'No tracks found'})
+        else:
+            return rec_tracks
+    except:
+        exit("Error: Unable to connect to the database")
 
 
 @app.route("/genre-predict", methods=['GET'])
@@ -63,3 +73,15 @@ def get_genre_prediction():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+dummy_tracks = [
+    {
+        'info': {
+            'artist': 'Sammy Hagar',
+            'name': "I can't drive 55",
+            'id': "sligjsdo93u2849023"
+        },
+
+    }
+]
