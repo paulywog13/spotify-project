@@ -1,43 +1,62 @@
 from flask import Flask, request, render_template, json
 from sassutils.wsgi import SassMiddleware
 from pymongo import MongoClient
+import os
 from bson.json_util import dumps
-
+from spotify.playlist import get_playlist, get_tracks
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-mdb_connect_string = "mongodb://localhost:27017"
-
+mdb_connect_string = os.environ['MONGODB_URI']
 app.wsgi_app = SassMiddleware(app.wsgi_app, {
     'app': ('static/scss', 'static/css', '/static/css')
 })
-
-
 @app.route("/")
 def home():
     return render_template('index.html')
-
-
 @app.route("/data", methods=['GET'])
 def get_data():
-    connection = None
     try:
-        connection = MongoClient(mdb_connect_string)  # equal to > show dbs
+        connection = MongoClient(mdb_connect_string)
+        db = connection.spotify
+        mdb_playlist = db.playlists.find_one()
+        sp_playlist = get_playlist()
+        if mdb_playlist['snapshot_id'] != sp_playlist['snapshot_id']:
+            db.playlists.update({}, sp_playlist, upsert=True)
+            db.tracks.drop()
+            db.tracks.insert_many(get_tracks(sp_playlist))
+        tracks = dumps([track for track in db.tracks.find()])
+        return tracks
     except:
         exit("Error: Unable to connect to the database")
-    db = connection.spotify
-    # run playlist.py (gets playlist from spotify API)
-    # get the snapshot_id from the response
-    # current_snapshot_id = mongo.db.playlist.find_one()
-    # if (api_snapshot_id != current_snapshot_id):
-    # run the code in audio-features.py
-    # update tracks collection in mongo
-    # run the code in user.py
-    # update user in mongo
-    # output = []
-    # for track in mongo.db.tracks.find():
-    #     output.append({k: v for k, v in track.items() if k != '_id'})
-    return dumps([track for track in db.tracks.find()])
-
-
+@app.route("/recommend", methods=['GET'])
+def get_recommendations():
+    track_id = request.args['track_id']
+    try:
+        connection = MongoClient(mdb_connect_string)
+        db = connection.spotify
+        rec_tracks = dumps([track for track in db.recommended.find({ 'info.orig_track_id': track_id })])
+        if (len(rec_tracks) == 0):
+            return dumps({'err': 'No tracks found'})
+        else:
+            print(rec_tracks[0:50])
+            return rec_tracks
+    except:
+        exit("Error: Unable to connect to the database")
+@app.route("/genre-predict", methods=['GET'])
+def get_genre_prediction():
+    track = request.args['track']
+    artist = request.args['artist']
+    # hit spotify API search route
+    print(f'q=artist:{artist}%20track:{track}&type=track')
+    # gets the first track returned from search query
+    # get the album from the track id, get its list of genres
+    # get the audio features from the track id
+    # run audio features through the machine learning model
+    # 
+    # return json object with:
+        # predicted genre
+        # actual genre list
+        # track info
+    return 'hi'
 if __name__ == "__main__":
     app.run(debug=True)
