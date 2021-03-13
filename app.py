@@ -4,6 +4,7 @@ from pymongo import MongoClient
 import os
 from bson.json_util import dumps
 from spotify.playlist import get_playlist, get_tracks
+from spotify.predict import get_track_genres
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -55,20 +56,8 @@ def get_recommendations():
 
 @app.route("/genre-predict", methods=['GET'])
 def get_genre_prediction():
-    track = request.args['track']
-    artist = request.args['artist']
-    # hit spotify API search route
-    print(f'q=artist:{artist}%20track:{track}&type=track')
-    # gets the first track returned from search query
-    # get the album from the track id, get its list of genres
-    # get the audio features from the track id
-    # run audio features through the machine learning model
-    # 
-    # return json object with:
-        # predicted genre
-        # actual genre list
-        # track info
-    return 'hi'
+    result = get_track_genres(request.args['q'])
+    return dumps(result)
 
 
 if __name__ == "__main__":
