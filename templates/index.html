@@ -144,6 +144,7 @@
             </section>
         </div>
         <div v-if="recommendationsActive" class="container-fluid">
+<<<<<<< HEAD
           <form id="recommendationForm" @submit.prevent="getRecommendations">
               <div class="select is-primary">
                   <select id="userSelect" v-model="user">
@@ -198,9 +199,122 @@
                 <div class="control">
                     <button @click="getPrediction" class="button is-info">
                         Search
+=======
+            <!-- <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>User</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        User 1
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        User 2
+                    </a>
+                </div>
+                </div>
+            </div> -->
+        
+                <div class="select is-primary">
+                    <select id="userSelect" v-model="user">
+                        <option v-for="user in users"
+                                :key="'user-' + user.id"
+                                :value="user.id">{( user.name )}
+                        </option>
+                    </select>
+                </div>
+                <div class="select is-primary">
+                    <select id="trackSelect" v-model="track">
+                        <option v-for="track in userTracks"
+                                :key="'track-' + track.info.track_id"
+                                :value="track.info.track_id">{( track.info.artist + ' - ' + track.info.name )}
+                        </option>
+                    </select>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button @click="getRecommendations" class="button is-link">Submit</button>
+                    </div>
+                </div>
+
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Artist</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="track in recTracks" :key="'rec-' + track.info.id">
+                            <td>{( track.info.artist )}</td>
+                            <td>{( track.info.name )}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul>
+                    <li v-for="track in recTracks" :key="'rec-' + track.info.id">
+                        {( track.info.name )}
+                    </li>
+                </ul> -->
+            </div>
+            <!-- <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Artist or Track</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+>>>>>>> 33fa6c49db3e89ed752a340623b485e69308be4d
                     </button>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Artist or Track Selection</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        Track 1
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Track 2
+                    </a>
+                </div>
+                </div>
+            </div>       -->
+            <h1 class="title has-text-centered"><b style="color:white">Recommendations</b></h1>
+        </div>
+        <div v-if="predictorActive" class="container-fluid">
+            <h2 class="title has-text-centered has-text-white py-6">Get a Prediction</h2>
+            <div class="field is-grouped has-text-centered mx-auto px-6">
+                <div class="control is-small">
+                    <input class="input" type="text" placeholder="Artist Name" v-model="predArtist">
+                </div>
+                <div class="control is-small">
+                    <input class="input" type="text" placeholder="Track Name" v-model="predTrack">
+                </div>
+                <div class="control">
+                    <button @click="getPrediction" class="button is-info">
+                        Search
+                    </button>
+                </div>
+            </div>
+>>>>>>> 33fa6c49db3e89ed752a340623b485e69308be4d
             <div v-if="">
 
             </div>

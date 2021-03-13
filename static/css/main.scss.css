@@ -2,6 +2,7 @@
   background-image: url("/static/images/headphones.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: repeat-y;
   height: 120vh; }
 
 .sp-container {

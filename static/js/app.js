@@ -13,6 +13,9 @@ const app = new Vue({
         recTracks: [],
         user: '1221063701',
         track: null,
+        predArtist: '',
+        predTrack: '',
+        prediction: {},
         playlistActive: true,
         overviewActive: false,
         predictorActive: false,
@@ -59,9 +62,17 @@ const app = new Vue({
         },
         getRecommendations: function () {
             d3.json('/recommend?track_id=' + this.track)
-                .then(data => console.log(data))
                 .then(data => this.recTracks = data)
                 .catch(err => this.submissionError = err)
+        },
+        getPrediction: function () {
+            let qString = encodeURI(this.predArtist + ' ' + this.predTrack)
+            d3.json('/genre-predict?q=' + qString)
+                .then(data => { 
+                    this.prediction = data;
+                    console.log(data);
+                })
+                .catch(err => console.log(err))
         }
     },
     created: function () {
