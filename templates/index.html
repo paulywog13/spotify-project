@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Spotify Project</title>
+    <title>Spotify Final Project</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.scss.css') }}"/>
+    <link rel="stylesheet" href="/static/css/main.scss.css"/>
     <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
-  </head>
+</head>
 <body>
-  <div id="app">
+<div id="app">
     <section class="hero is-primary is-success">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item" target="_blank" href="https://www.spotify.com/us/">
-                            <img src="{{ url_for('static', filename='images/Spotify_Logo_RGB_Black.png') }}"
+                            <img src="/static/images/Spotify_Logo_RGB_Black.png"
                                  alt="Spotify Logo" style="width:100px;height:600px;">
                         </a>
                     </div>
-                    <div id="navbarlink" class="navbar-menu"> 
-                      <div class="navbar-end">
-                        <a class="navbar-item is-active" target="_blank" href="https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=xKDqtJBVRrm8Llop7dvDNA">
-                          <b style="color:black">Data Analysis Jamz Playlist</b>
-                        </a>
-                      </div>
+                    <div id="navbarlink" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-active" target="_blank"
+                               href="https://open.spotify.com/playlist/0fCFwL8LJE99raQb1g2YvF?si=xKDqtJBVRrm8Llop7dvDNA">
+                                <b style="color:black">Data Analysis Jamz Playlist</b>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -41,111 +42,234 @@
                     How does the music move you?
                 </p>
                 <p></p>
-                <button class="button is-black" href="/data" role="button">Inspect Playlist</button>
+                <!-- <button class="button is-black" href="/data" role="button">Inspect Playlist</button> -->
             </div>
             </p>
         </div>
 
         <div class="hero-foot">
-            <nav class="tabs">
-                <div class="container">
+            <nav class="tabs is-boxed is-toggle is-fullwidth">
+                <div class="container has-background-black">
                     <ul>
-                        <li><a @click="active = 'overview'" class="navbar-item"> <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
-                          <span>Overview</span></a></li>
-                        <li><a @click="active = 'playlist'" class="navbar-item"><span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
-                          <span>Playlist Results</span></a></li>
-                        <!-- <li><a class="navbar-item">Genres Analysis</a></li> -->
+                        <li>
+                            <a @click="changeActive('playlist')" class="navbar-item"
+                               :class="{'is-active': playlistActive}">
+                                <span class="icon is-small">
+                                    <i class="fas fa-music" aria-hidden="true"></i>
+                                </span>
+                                <span>Playlist Results</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="changeActive('recommendations')" class="navbar-item"
+                               :class="{'is-active': recommendationsActive}">
+                                <span class="icon is-small">
+                                    <i class="fas fa-headphones" aria-hidden="true"></i>
+                                </span>
+                                <span>Recommendations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="changeActive('predictor')" class="navbar-item"
+                               :class="{'is-active': predictorActive}">
+                                <span class="icon is-small">
+                                    <i class="fas fa-calculator" aria-hidden="true"></i>
+                                </span>
+                                <span>Genre Predictor</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a @click="changeActive('overview')" class="navbar-item"
+                               :class="{'is-active': overviewActive}">
+                                <span class="icon is-small">
+                                    <i class="fas fa-search-plus" aria-hidden="true"></i>
+                                </span>
+                                <span>Definitions</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </section>
-  <div v-if="active == 'overview'" class="container is-max-widescreen">    
-    <h1 class="title has-text-centered"><b>Overview</b></h1>
-        <br>
-        <p><b>Length</b> = The duration of the track in milliseconds.</p>
-        <br>
-        <p><b>Popularity</b> = The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. 
-          The artist’s popularity is calculated from the popularity of all the artist’s tracks.</p>
-          <br>
-        <p><b>Acousticness</b> = A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 
-          1.0 represents high confidence the track is acoustic.</p>
-          <br>
-        <p><b>Danceability</b> = Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. 
-          A value of 0.0 is least danceable and 1.0 is most danceable.</p>
-          <br>
-        <p><b>Energy</b> = Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. 
-          For example, death metal has high energy, while a Bach prelude scores low on the scale. 
-          Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</p>
-          <br>
-        <p><b>Instrumentalness</b> = Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. 
-          Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. 
-          Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</p>
-          <br>
-        <p><b>Liveness</b> = Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. 
-          A value above 0.8 provides strong likelihood that the track is live.</p>
-          <br>
-        <p><b>Loudness</b> = The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. 
-          Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db.</p>
-          <br>
-        <p><b>Speechiness</b> = Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. 
-          Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech,
-          either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</p>
-          <br>
-        <p><b>Tempo</b> = The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</p>
-        <br>
-        <p><b>Time Signature</b> = An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure).</p>
-        <br>
-    </div>     
-    <div v-if="active == 'playlist'" class="container-fluid">
-        <section class="section">
-            <h1 class="title has-text-centered"><b>Playlist Results</b></h1>
-            <div v-if="loading" class="container">
-                <spinner/>
-            </div>
-            <div v-else-if="error" class="container">
-                <error-message/>
-            </div>
-            <div v-else class="container-fluid">
-                <scatter :tracks="tracks" :x="x" :y="y" :users="users"/>
-            </div>
-            <div class="field is-grouped">
-                <div class="control">
-                    <label for="xAxisSelect" class="label">Comparison Selection 1</label>
-                    <div class="select is-primary">
-                        <select id="xAxisSelect" v-model="x">
-                            <option v-for="axis in axes"
-                                    :key="'x-' + axis"
-                                    :value="axis"
-                                    :disabled="axis == y">{( toTitleCase(axis) )}
-                            </option>
-                        </select>
+    <div class="sp-content">
+        <div v-if="playlistActive" class="container-fluid">
+            <section class="section">
+                <div class="field is-grouped columns is-centered">
+                    <div class="control column is-narrow">
+                        <label for="xAxisSelect" class="label has-text-white-ter">X-Axis</label>
+                        <div class="select is-primary">
+                            <select id="xAxisSelect" v-model="x">
+                                <option v-for="axis in axes"
+                                        :key="'x-' + axis"
+                                        :value="axis"
+                                        :disabled="axis == y">{( toTitleCase(axis) )}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control column is-narrow">
+                        <label for="yAxisSelect" class="label has-text-white-ter">Y-Axis</label>
+                        <div class="select is-primary">
+                            <select id="yAxisSelect" v-model="y">
+                                <option v-for="axis in axes"
+                                        :key="'y-' + axis"
+                                        :value="axis"
+                                        :disabled="axis == x">{( toTitleCase(axis) )}
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="control">
-                    <label for="yAxisSelect" class="label">Comparison Selection 2</label>
-                    <div class="select is-primary">
-                        <select id="yAxisSelect" v-model="y">
-                            <option v-for="axis in axes"
-                                    :key="'y-' + axis"
-                                    :value="axis"
-                                    :disabled="axis == x">{( toTitleCase(axis) )}
-                            </option>
-                        </select>
+                <ul class="columns is-centered has-text-white-ter">
+                    <li v-for="user in users" :key="user.id" class="column is-narrow">
+                        <label class="checkbox">
+                            <input type="checkbox" class="user-checkbox" :data-user="user.id" v-model="user.selected">
+                            {( user.name )}
+                        </label>
+                    </li>
+                </ul>
+                <h1 class="title has-text-centered"><b style="color:white">Playlist Results</b></h1>
+                <div class="columns is-centered is-vcentered">
+                    <div v-if="loading" class="column">
+                        <spinner/>
+                    </div>
+                    <div v-else-if="error" class="column has-text-white-ter" >
+                        <error-message/>
+                    </div>
+                    <div v-else class="column">
+                        <scatter :tracks="tracks" :x="x" :y="y" :users="selectedUsers"/>
                     </div>
                 </div>
+            </section>
+        </div>
+        <div v-if="recommendationsActive" class="container-fluid">
+          <form id="recommendationForm" @submit.prevent="getRecommendations">
+              <div class="select is-primary">
+                  <select id="userSelect" v-model="user">
+                      <option v-for="user in users"
+                              :key="'user-' + user.id"
+                              :value="user.id">{( user.name )}
+                      </option>
+                  </select>
+              </div>
+              <div class="select is-primary">
+                  <select id="trackSelect" v-model="track">
+                      <option v-for="track in userTracks"
+                              :key="'track-' + track.info.track_id"
+                              :value="track.info.track_id">{( track.info.artist + ' - ' + track.info.name )}
+                      </option>
+                  </select>
+              </div>
+              <div class="field">
+                  <div class="control">
+                      <button @click='getRecommendations' class="button is-link">Submit</button>
+                  </div>
+              </div>
+          </form>
+          <h1 class="title has-text-centered"><b style="color:white">Recommendations</b></h1>
+          <div class="container">
+            <table class = "table">
+                <table id="table" class="table is-bordered is-striped is-narrow is-center" style="margin-left:auto; margin-right:auto;">
+                  <thead>
+                    <tr>
+                      <th class="table-head">Artist Name</th>
+                      <th class="table-head">Song Title</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="track in recTracks" :key="'rec-' + track.info.id">
+                        <td> {( track.info.artist )}</td>
+                        <td> {( track.info.name )}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </div>
+        <div v-if="predictorActive" class="container-fluid">
+            <h2 class="title has-text-centered has-text-white py-6">Get a Prediction</h2>
+            <div class="field is-grouped has-text-centered mx-auto px-6">
+                <div class="control is-small">
+                    <input class="input" type="text" placeholder="Artist Name" v-model="predArtist">
+                </div>
+                <div class="control is-small">
+                    <input class="input" type="text" placeholder="Track Name" v-model="predTrack">
+                </div>
+                <div class="control">
+                    <button @click="getPrediction" class="button is-info">
+                        Search
+                    </button>
+                </div>
             </div>
-        </section>
+            <div v-if="">
+
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/aff_clusters.png') }}" alt="">
+            </div>
+        </div>
+        <div v-if="overviewActive" class="container sp-definitions is-max-widescreen py-6">
+            <h1 class="title has-text-centered"><b style="color:white">Definitions</b></h1>
+            <br>
+            <p style="color:white"><b>Length</b> = The duration of the track in milliseconds.</p>
+            <br>
+            <p style="color:white"><b>Popularity</b> = The popularity of the artist. The value will be between 0 and 100, with 100 being the
+                most popular.
+                The artist’s popularity is calculated from the popularity of all the artist’s tracks.</p>
+            <br>
+            <p style="color:white"><b>Acousticness</b> = A confidence measure from 0.0 to 1.0 of whether the track is acoustic.
+                1.0 represents high confidence the track is acoustic.</p>
+            <br>
+            <p style="color:white"><b>Danceability</b> = Danceability describes how suitable a track is for dancing based on a combination of
+                musical elements including tempo, rhythm stability, beat strength, and overall regularity.
+                A value of 0.0 is least danceable and 1.0 is most danceable.</p>
+            <br>
+            <p style="color:white"><b>Energy</b> = Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and
+                activity. Typically, energetic tracks feel fast, loud, and noisy.
+                For example, death metal has high energy, while a Bach prelude scores low on the scale.
+                Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset
+                rate, and general entropy.</p>
+            <br>
+            <p style="color:white"><b>Instrumentalness</b> = Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as
+                instrumental in this context.
+                Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater
+                likelihood the track contains no vocal content.
+                Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value
+                approaches 1.0.</p>
+            <br>
+            <p style="color:white"><b>Liveness</b> = Detects the presence of an audience in the recording. Higher liveness values represent an
+                increased probability that the track was performed live.
+                A value above 0.8 provides strong likelihood that the track is live.</p>
+            <br>
+            <p style="color:white"><b>Loudness</b> = The overall loudness of a track in decibels (dB). Loudness values are averaged across the
+                entire track and are useful for comparing relative loudness of tracks.
+                Loudness is the quality of a sound that is the primary psychological correlate of physical strength
+                (amplitude). Values typical range between -60 and 0 db.</p>
+            <br>
+            <p style="color:white"><b>Speechiness</b> = Speechiness detects the presence of spoken words in a track. The more exclusively
+                speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.
+                Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and
+                0.66 describe tracks that may contain both music and speech,
+                either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent
+                music and other non-speech-like tracks.</p>
+            <br>
+            <p style="color:white"><b>Tempo</b> = The overall estimated tempo of a track in beats per minute (BPM). In musical terminology,
+                tempo is the speed or pace of a given piece and derives directly from the average beat duration.</p>
+            <br>
+            <p style="color:white"><b>Time Signature</b> = An estimated overall time signature of a track. The time signature (meter) is a
+                notational convention to specify how many beats are in each bar (or measure).</p>
+            <br>
+        </div>
     </div>
-  </div>
-  
+</div>
+
 <!--    <iframe src="https://open.spotify.com/embed/playlist/0fCFwL8LJE99raQb1g2YvF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>-->
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-<script src="{{ url_for('static', filename='js/scatter.js') }}"></script>
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="/static/js/scatter.js"></script>
+<script src="/static/js/app.js"></script>
 </body>
 
 </html>
