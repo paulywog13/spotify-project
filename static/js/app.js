@@ -15,7 +15,12 @@ const app = new Vue({
         track: null,
         predArtist: '',
         predTrack: '',
-        prediction: {},
+        prediction: {
+            artists: [],
+            name: null,
+            prediction: null,
+            words: []
+        },
         playlistActive: true,
         overviewActive: false,
         predictorActive: false,
@@ -69,8 +74,11 @@ const app = new Vue({
             let qString = encodeURI(this.predArtist + ' ' + this.predTrack)
             d3.json('/genre-predict?q=' + qString)
                 .then(data => { 
-                    this.prediction = data;
-                    console.log(data);
+                    const {artists, name, prediction, words} = data;
+                    this.prediction.artists = artists;
+                    this.prediction.name = name;
+                    this.prediction.prediction = prediction;
+                    this.prediction.words = words;
                 })
                 .catch(err => console.log(err))
         }

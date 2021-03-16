@@ -33,5 +33,7 @@ def get_track_genres(q):
     features['artists'] = [artist['name'] for artist in track['artists']],
     features['words'] = words,
     features['prediction'] = prediction
+    features['name'] = track['name']
+    features['artists'] = [artist['name'] for artist in artists['artists']]
 
     return features
